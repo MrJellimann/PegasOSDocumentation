@@ -11,32 +11,30 @@ The planned feature list as of 1/28/2020 is as follows:
 
 ### Core Shell Programs
   
-..* File Manager/File Explorer
+⋅⋅* File Manager/File Explorer
   
-..* Users
+⋅⋅* Users
       
-      -> WhoAmI
+⋅⋅* WhoAmI
   
-  Calculator
+⋅⋅* Calculator
   
-  DisplaySettings
+⋅⋅* DisplaySettings
+ -> TextColor, TextSize, Fonts, TextHighlighting (keywords)
   
-      -> TextColor, TextSize, Fonts, TextHighlighting (keywords)
-  
-  TextEditor
-  
-      -> Read, Write
+⋅⋅* TextEditor
+ -> Read, Write
 
 ### Additional Shell Programs
 
-  GoKnightScreamer
+⋅⋅* GoKnightScreamer
   
-  TicTacToe
+⋅⋅* TicTacToe
   
-  CSZork
+⋅⋅* CSZork
   
-  KnightQuestions
+⋅⋅* KnightQuestions
   
-  ParkingLotSimulator
+⋅⋅* ParkingLotSimulator
   
-  Hangman
+⋅⋅* Hangman
