@@ -7,6 +7,14 @@ The source code for this OS is [here.](https://github.com/MrJellimann/KnightOS)
 
 ======
 
+## Loaders
+
+## Kernel
+
+## Shell Terminal
+
+More info can be found [here]()
+
 The planned feature list as of 1/28/2020 is as follows:
 
 ### Core Shell Programs
