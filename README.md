@@ -1,9 +1,9 @@
-# KnightOSDocumentation
-The documentation for KnightOS, covering everything from design decisions to diagrams and structure.
+# PegasOSDocumentation
+The documentation for PegasOS, covering everything from design decisions to diagrams and structure.
 
 The documentation for this OS is here (where you are now!)
 
-The source code for this OS is [here.](https://github.com/MrJellimann/KnightOS)
+The source code for this OS is [here.](https://github.com/MrJellimann/PegasOS)
 
 ======
 
