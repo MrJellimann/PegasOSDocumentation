@@ -1,3 +1,5 @@
 # PegasOS - Introduction
 
-Text goes here
+Sample text.
+
+[Back](DESIGN_DOCUMENT.md)
