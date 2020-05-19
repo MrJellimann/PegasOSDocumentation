@@ -74,14 +74,26 @@ This URL link is the USB driver repository we will be using for our operating sy
 
 #### GPIO Registers
 
-| Address   | Field Name | Description            | Size | Read/Write |
-| --------- | ---------- | ---------------------- | ---- | ---------- |
-| 0xXX20000 | GPFSEL0    | GPIO Function Select 0 | 32   | R/W        |
-| 0xXX20004 | GPFSEL1    | GPIO Function Select 1 | 32   | R/W        |
-| 0xXX20008 | GPFSEL2    | GPIO Function Select 2 | 32   | R/W        |
-| 0xXX2000C | GPFSEL3    | GPIO Function Select 3 | 32   | R/W        |
-
-***TODO: Finish This Table***
+| Address   | Field Name | Description                          | Size | Read/Write |
+| --------- | ---------- | ------------------------------------ | ---- | ---------- |
+| 0xXX20000 | GPFSEL0    | GPIO Function Select 0               | 32   | R/W        |
+| 0xXX20004 | GPFSEL1    | GPIO Function Select 1               | 32   | R/W        |
+| 0xXX20008 | GPFSEL2    | GPIO Function Select 2               | 32   | R/W        |
+| 0xXX2000C | GPFSEL3    | GPIO Function Select 3               | 32   | R/W        |
+| 0xXX20010 | GPFSEL4    | GPIO Function Select 4               | 32   | R/W        |
+| 0xXX20014 | GPFSEL5    | GPIO Function Select 5               | 32   | R/W        |
+| 0xXX2001C | GPSET0     | GPIO Pin Output Set 0                | 32   | W          |
+| 0xXX20020 | GPSET1     | GPIO Pin Output Set 1                | 32   | W          |
+| 0xXX20028 | GPCLR0     | GPIO Pin Output Clear 0              | 32   | W          |
+| 0xXX20034 | GPCLR1     | GPIO Pin Output Clear 1              | 32   | W          |
+| 0xXX20038 | GPLEV0     | GPIO Pin Level 0                     | 32   | R          |
+| 0xXX20040 | GPLEV1     | GPIO Pin Level 1                     | 32   | R          |
+| 0xXX20044 | GPEDS0     | GPIO Pin Event Detect Status 0       | 32   | R/W        |
+| 0xXX20064 | GPEDS1     | GPIO Pin Event Detect Status 1       | 32   | R/W        |
+| 0xXX20068 | GPREN0     | GPIO Pin Rising Edge Detect Enable 0 | 32   | R/W        |
+| 0xXX200?? | GPREN1     | GPIO Pin Rising Edge Detect Enable 1 | 32   | R/W        |
+| 0xXX20098 | GPPUDCLK0  | GPIO Pin Pull-up/down Enable Clock 0 | 32   | R/W        |
+| 0xXX2009C | GPPUDCLK1  | GPIO Pin Pull-up/down Enable Clock 1 | 32   | R/W        |
 
 For more information about each register, please see the BCM ARM Peripheral Manual.
 
@@ -92,8 +104,21 @@ For more information about each register, please see the BCM ARM Peripheral Manu
 | 0x0            | DR            | Data Register                     | 32   |
 | 0x4            | RSRECR        | Flag Register                     | 32   |
 | 0x18           | FR            | Flag Register                     | 32   |
-
-***TODO: Finish This Table***
+| 0x20           | ILPR          | No Use                            | 32   |
+| 0x24           | IBRD          | Integer Baud Rate                 | 32   |
+| 0x28           | FBRD          | Fractional Baud Rate Divisor      | 32   |
+| 0x2c           | LCRH          | Line Control Register             | 32   |
+| 0x30           | CR            | Control Register                  | 32   |
+| 0x34           | IFLS          | Interrupt Mask Set Clear Register | 32   |
+| 0x38           | IMSC          | Raw Interrupt Status Register     | 32   |
+| 0x3c           | RIS           | Interrupt Clear Register          | 32   |
+| 0x40           | MIS           | DMA Control Register              | 32   |
+| 0x44           | ICR           | Test Control Register             | 32   |
+| 0x48           | DMACR         | DMA Control Register              | 32   |
+| 0x80           | ITCR          | DMA                               | 32   |
+| 0x84           | ITIP          | Integration Test Input Register   | 32   |
+| 0x88           | ITOP          | Integration Test Output Register  | 32   |
+| 0x8c           | TDR           | Test Data Register                | 32   |
 
 For more information about each register, please see the BCM ARM Peripheral Manual.
 
@@ -188,13 +213,21 @@ Holds the value of the process right before it was interrupted.
 
 ## 4.1.13 ARMv8 Processor States
 
-| Name | Description                 |
-| ---- | --------------------------- |
-| N    | Negative Condition          |
-| Z    | Zero Condition              |
-| C    | Carry Condition             |
-
-***TODO: Finish This Table***
+| Name  | Description                                    |
+| ----- | ---------------------------------------------- |
+| N     | Negative Condition                             |
+| Z     | Zero Condition                                 |
+| C     | Carry Condition                                |
+| V     | Overflow Condition                             |
+| D     | Debug Mask bit                                 |
+| A     | SError Mask bit                                |
+| I     | IRQ Mask bit                                   |
+| F     | FIQ Mask bit                                   |
+| SS    | Software Step bit                              |
+| IL    | Illegal Execution State bit                    |
+| EL(2) | Exception Level                                |
+| nRW   | Execution State, 0=64, 1=32                    |
+| SP    | Stack Pointer Selector, 0 = SP_EL0, 1 = SP_ELn |
 
 Unlike ARMv7, ARMv8 does not have a current program status register. The components of the old register are not accessible under these different processor states. N, Z, C, and V can be accessed from EL0. All others are undefined at EL0, but can be accessed from EL1 and up.
 
@@ -240,15 +273,20 @@ The cache controller is a piece of hardware that manages cache memory. It is lar
 
 Cache policies let us detail what kinds of data gets stored in the cache. The allocation policy are as following:
 
-**Write Allocation:** Data is loaded into the cache on a write- miss, followed by a write-hit.
+**Write Allocation**
 
-**Read Allocation:** Data is loaded on a read-miss.
+Data is loaded into the cache on a write- miss, followed by a write-hit.
+
+**Read Allocation**
+Data is loaded on a read-miss.
 
 The update policies are as followed:
 
-**Write-Back (WB):** Write only occurs on the cache and it is marked as dirty. External memory only updated when evicted or cleaned.
+**Write-Back (WB)**
+Write only occurs on the cache and it is marked as dirty. External memory only updated when evicted or cleaned.
 
-**Write-Through (WT):** Write updates on both the cache and external memory.
+**Write-Through (WT)**
+Write updates on both the cache and external memory.
 
 Specific Arm instructions regarding policies are as followed:
 
@@ -260,10 +298,17 @@ Cache maintenance is required to remove stale data or update MMU changes. Here i
 
 | Cache | Operation | Description                                                     |
 | ----- | --------- | --------------------------------------------------------------- |
-|       | CISW      | Clean and invalidate by Set/Way |
+|       | CISW      | Clean and invalidate by Set/Way                                 |
 |       | CIVAC     | Clean and Invalidate by Virtual Address to Point of Concurrency |
-
-***TODO: Finish This Table***
+|       | CSW       | Clean by Set/Way                                                |
+| DC    | CVAC      | Clean by Virtual Address to Point of Coherency                  |
+|       | CVAU      | Clean by Virtual Address to Point of Unification                |
+|       | ISW       | Invalidate by Set/Way                                           |
+|       | IVAC      | Invalidate by Virtual Address, to Point of Coherency            |
+| DC    | ZVA       | Cache Zero by Virtual Address                                   |
+|       | IALLUIS   | Invalidate all, to Point of Unification, Inner Shareable        |
+| IC    | IALLU     | Invalidate all, to Point of Unification, Inner Shareable        |
+|       | IVAU      | Invalidate by Virtual Address to Point of Unification           |
 
 ## 4.1.22 Memory Management Unit
 
