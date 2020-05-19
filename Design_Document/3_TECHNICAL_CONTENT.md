@@ -217,7 +217,5 @@ As per the provisions granted under the GNU General Public License (version 3 an
 
 If a user, individual, or group would like to fork the project and make their own modifications to their fork, they are free to do so under the provisions of the GNU General Public License, versions 3 and later. They may also use their fork of the project as a reference in applying to become an official contributor to the project.
 
-
-
 [Back - Legal, Ethical, and Technical](2_LEGAL_ETHICAL_TECHNICAL.md) | [Next - Hardware](4_HARDWARE.md) | 
 [Design Document Home](DESIGN_DOCUMENT.md) | [Documentation Home](../README.md)
