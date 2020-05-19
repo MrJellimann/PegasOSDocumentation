@@ -17,19 +17,19 @@ For your convenience, the final design document has been converted into text pag
 
 [3. Technical Content](3_TECHNICAL_CONTENT.md)
 
-[4. Hardware]()
+[4. Hardware](4_HARDWARE.md)
 
-[5. System]()
+[5. System](5_SYSTEM.md)
 
-[6. Kernel]()
+[6. Kernel](6_KERNEL.md)
 
-[7. Shell]()
+[7. Shell](7_SHELL.md)
 
-[8. Administrative Content]()
+[8. Administrative Content](8_ADMINISTRATIVE_CONTENT.md)
 
-[9. Appendices]()
+[9. Appendices](9_APPENDICES.md)
 
-[10. References]()
+[10. References](10_DESIGN_DOCUMENT.md)
 
 
-[Back](../README.md)          [Next](1_INTRODUCTION.md)
+[Back](../README.md) | [Next](1_INTRODUCTION.md)
