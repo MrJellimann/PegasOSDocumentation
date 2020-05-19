@@ -32,7 +32,7 @@ Like-to-Haves
 3. PegasOS may have a set of non-mandatory programs included that will elevate the user’s experience with the operating system.
 4. PegasOS may have a customizable shell terminal screen, with a dedicated section for terminal feed, past successful commands, and the current directory and file path, so called The Record.
 
-## 3.2 Program and System Ideas/Decisions
+# 3.2 Program and System Ideas/Decisions
 
 Since this is a student project, we wanted to challenge ourselves but also not overwhelm our team. For this project, we need an operating system that has the essential components to any operating system while also having additional programs that the user can use. The following programs were agreed upon by the team as either required programs or ‘like-to-have’ programs, in a brainstorming session during a physical meeting. This list is neither comprehensive nor final.
 
@@ -100,7 +100,7 @@ The user asks the operating system for a story and it chooses a set of small sho
 
 A PegasOS feature that will allow the user to change the display settings. The user can modify settings such as resolution, text font, and text size. The user can also modify the terminal to have add or remove the file path window and previous command lists window.
 
-## 3.3 Initial Research and Design
+# 3.3 Initial Research and Design
 
 ## 3.3.1 Design Overview
 
@@ -155,7 +155,7 @@ After downloading the prebuilt cross-compiler, create a directory to put your ne
 
 Now you need to edit the path environment variable. For Linux, all you need to do is edit the \~/.profile found in the home directory. You can do this by using nano to edit the file. Scroll down to the bottom and paste this line of text export PATH=”$HOME/opt/cross/bin:$PATH”. Restart the computer and your system should be able to compile with ARM.
 
-## 3.4 Build, Prototype, Test, and Release Plans
+# 3.4 Build, Prototype, Test, and Release Plans
 
 This section details our various testing methods and plans for testing the validity of the system. This is broken up into various sections in the order that the testing will be taking place.
 
