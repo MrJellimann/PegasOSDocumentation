@@ -8,7 +8,7 @@ The Raspberry Pis’ internal hardware has evolved through several generations. 
 
 A system on a chip is essentially all of the parts of a computer in a single chip. This is great for things like the Pi 4 because it uses up much less power than multi-chip designs with similar functionality. The Pi 4 uses a Broadcom BCM 2711 SoC.It uses an ARM 72 core, making it more powerful than its predecessors. Furthermore, it’s GPU is improved to process input and output faster. This SoC is capable of addressing more memory, continues to use heat spreading technology, and a natively attached Ethernet controller.
 
-![Raspberry Pi Diagram](/images/4_Hardware/4_image2.png?raw=true "Raspberry Pi 4")
+![Raspberry Pi Diagram](images/4_Hardware/4_image2.png?raw=true "Raspberry Pi 4")
 
 Credit to: Raspberry Pi Company
 
@@ -16,9 +16,9 @@ Credit to: Raspberry Pi Company
 
 One feature of the Raspberry Pi is the GPIO (General-Purpose Input/Output) pins along the top edge of the board. Most Raspberry Pi boards have a 40-pin GPIO header except Pi 1 Model B+ (2014). Each GPIO pin on the board is used for a wide range of purposes. Here is a diagram showing how the GPIO pins are assigned.
 
-![GPIO Diagram](/images/4_Hardware/4_image3.png "Raspberry Pi GPIO Diagram")
+![GPIO Diagram](images/4_Hardware/4_image3.png "Raspberry Pi GPIO Diagram")
 
-![Pin Diagram](/images/4_Hardware/4_image4.png "Raspberry Pi Pin Diagram")
+![Pin Diagram](images/4_Hardware/4_image4.png "Raspberry Pi Pin Diagram")
 
 Credit to: Raspberry Pi Company
 

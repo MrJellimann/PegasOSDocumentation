@@ -1,5 +1,7 @@
 # PegasOS - Technical Content
 
+![3 - Technical Content](images/3_Technical_Content/3_image1.png "3 - Technical Content")
+
 ## 3.1.1 Project Goal
 
 Our goal for this project is to create an operating system that can utilize the ARM 64-bit architecture that is native to the chip, since 32-bit systems are legacy support with the instruction set itself. Furthermore, we do not want this to be a fork of another operating system like many Linux distributions out there, but rather its own system. We want to create an operating system that has the essential programs that a user would need, plus some fun UCF-themed applications.
@@ -104,7 +106,7 @@ A PegasOS feature that will allow the user to change the display settings. The u
 
 ## 3.3.1 Design Overview
 
-[Picture goes here]()
+![PegasOS Design Overview](images/3_Technical_Content/3_image2.png "PegasOS Design Overview")
 
 ## 3.3.2 Cross Compiler
 

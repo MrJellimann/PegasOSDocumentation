@@ -1,5 +1,7 @@
 # PegasOS - Introduction
 
+![1 - Introduction](images/1_Introduction/1_image1.png "1 - Introduction")
+
 ## 1.1 Executive Summary
 
 Operating Systems are amazing pieces of software. They are something that many of us take for granted in the modern digital age, and yet the amount of work that goes into a functional operating system, let alone a fully-featured and usable operating system is a monument to the decades of design and progress that has gone into the field. From the early days of operating systems that had no display or interface whatsoever, to the early text-based systems, to rudimentary graphic interfaces and finally the modern systems that we are used to - immense amounts of work have gone into optimizing these systems, and making the design as intuitive to the user as possible.
