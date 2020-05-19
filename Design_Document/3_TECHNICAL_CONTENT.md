@@ -2,4 +2,5 @@
 
 Sample Text.
 
-[Back](DESIGN_DOCUMENT.md)          [Next](4_HARDWARE.md)
+[Back - Legal, Ethical, and Technical](2_LEGAL_ETHICAL_TECHNICAL.md) | [Next - Hardware](4_HARDWARE.md) | 
+[Design Document Home](DESIGN_DOCUMENT.md) | [Documentation Home](../README.md)
