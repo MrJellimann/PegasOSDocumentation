@@ -29,7 +29,7 @@ For your convenience, the final design document has been converted into text pag
 
 [9. Appendices](9_APPENDICES.md)
 
-[10. References](10_DESIGN_DOCUMENT.md)
+[10. References](10_REFERENCES.md)
 
 
 [Back](../README.md) | [Next](1_INTRODUCTION.md)
