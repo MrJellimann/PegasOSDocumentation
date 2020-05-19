@@ -1,6 +1,6 @@
 # PegasOS - Hardware
 
-![](images/4_image1.png?raw=true "4 - Hardware")
+![4 - Hardware](/images/4_image1.png?raw=true "4 - Hardware")
 
 # 4.1 Raspberry Pi Hardware
 
@@ -8,7 +8,7 @@ The Raspberry Pis’ internal hardware has evolved through several generations. 
 
 A system on a chip is essentially all of the parts of a computer in a single chip. This is great for things like the Pi 4 because it uses up much less power than multi-chip designs with similar functionality. The Pi 4 uses a Broadcom BCM 2711 SoC.It uses an ARM 72 core, making it more powerful than its predecessors. Furthermore, it’s GPU is improved to process input and output faster. This SoC is capable of addressing more memory, continues to use heat spreading technology, and a natively attached Ethernet controller.
 
-![Raspberry Pi Diagram](images/4_image2.png?raw=true "Raspberry Pi 4")
+![Raspberry Pi Diagram](/images/4_image2.png?raw=true "Raspberry Pi 4")
 
 Credit to: Raspberry Pi Company
 
