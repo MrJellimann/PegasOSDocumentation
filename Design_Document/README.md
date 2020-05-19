@@ -11,7 +11,7 @@ For your convenience, the final design document has been converted into text pag
 ### Final Design Document
 ## PegasOS
 
-[1. Introduction](http://www.github.com/MrJellimann/PegasOSDocumentation/Design_Document/1_Introduction/INTRODUCTION.md)
+[1. Introduction](INTRODUCTION.md)
 
 [2. Legal, Ethical, and Technical]()
 
