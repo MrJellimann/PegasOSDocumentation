@@ -162,22 +162,28 @@ There are 31 x64 bit general purpose registers accessible at all exception level
 [Image Goes Here]()
 
 **Zero Register**
+
 A zero register is a register that is a hard wired 0. This is a very common register component because 0 is a very useful constant.
 
 **Program Counter**
+
 The program counter houses the current instruction. This is not easily accessed and really should not be directly accessed.
 
 **StackPointer**
+
 The stack pointer points to the current point on the stack.
 
 **Program Status Register**
+
 This register contains information on the current state of the program
 being executed and the state of the processors.
 
 **Exception Link Register**
+
 This contains the link to return to once a function call completes. There is a dedicated SP with every exception level, but it does not hold the return state.
 
 **Saved Process Status Register**
+
 Holds the value of the process right before it was interrupted.
 
 ## 4.1.13 ARMv8 Processor States
@@ -234,19 +240,15 @@ The cache controller is a piece of hardware that manages cache memory. It is lar
 
 Cache policies let us detail what kinds of data gets stored in the cache. The allocation policy are as following:
 
-**Write Allocation**
-Data is loaded into the cache on a write- miss, followed by a write-hit.
+**Write Allocation:** Data is loaded into the cache on a write- miss, followed by a write-hit.
 
-**Read Allocation**
-Data is loaded on a read-miss.
+**Read Allocation:** Data is loaded on a read-miss.
 
 The update policies are as followed:
 
-**Write-Back (WB)**
-Write only occurs on the cache and it is marked as dirty. External memory only updated when evicted or cleaned.
+**Write-Back (WB):** Write only occurs on the cache and it is marked as dirty. External memory only updated when evicted or cleaned.
 
-**Write-Through (WT)**
-Write updates on both the cache and external memory.
+**Write-Through (WT):** Write updates on both the cache and external memory.
 
 Specific Arm instructions regarding policies are as followed:
 
@@ -309,8 +311,11 @@ https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/13_IOSystems.html
 A simple way of setting up an I/O Manager is to have registers that the CPU checks every instruction. This is broken down into four registers:
 
 **Data-In:** Read for input
+
 **Data-Out:** Write for output
+
 **Status:** Read for status of devices (idle, ready, busy, error, transaction complete)
+
 **Control:** has bits to issue commands or change settings (parity checking, word length, etc)
 
 Another way is through memory-mapped I/O. This means portioning out some address space to map to the device. Communication occurs from reading/writing from those areas. This is mostly useful for devices with tons of data to process (ex. A graphics card) and not for low input devices. With this method, however, you will also need to establish access permissions to prevent processes from overwriting it on accident.
