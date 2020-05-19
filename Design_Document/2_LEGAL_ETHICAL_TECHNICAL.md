@@ -2,4 +2,4 @@
 
 Sample Text.
 
-[Back](DESIGN_DOCUMENT.md)
+[Back](DESIGN_DOCUMENT.md)          [Next](3_TECHNICAL_CONTENT.md)

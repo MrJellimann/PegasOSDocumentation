@@ -15,7 +15,7 @@ For your convenience, the final design document has been converted into text pag
 
 [2. Legal, Ethical, and Technical](2_LEGAL_ETHICAL_TECHNICAL.md)
 
-[3. Technical Content]()
+[3. Technical Content](3_TECHNICAL_CONTENT.md)
 
 [4. Hardware]()
 
@@ -32,4 +32,4 @@ For your convenience, the final design document has been converted into text pag
 [10. References]()
 
 
-[Back](../README.md)
+[Back](../README.md)          [Next](1_INTRODUCTION.md)
