@@ -31,4 +31,4 @@ For your convenience, the final design document has been converted into text pag
 [10. References](10_REFERENCES.md)
 
 
-[Back](../README.md) | [Next](1_INTRODUCTION.md)
+[Back - Documentation Home](../README.md) | [Next - Introduction](1_INTRODUCTION.md)
