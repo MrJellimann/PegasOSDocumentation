@@ -8,25 +8,27 @@ The most up-to-date information will always be kept in the home directory of thi
 
 For your convenience, the final design document has been converted into text pages you can view on your browser. You may also download the final design document that was submitted as a .pdf, which is included in this directory.
 
-### Final Design Document
 ## PegasOS
 
-[1. Introduction](http://www.github.com/MrJellimann/PegasOSDocumentation/Design_Document/1_Introduction/INTRODUCTION.md)
+[1. Introduction](1_INTRODUCTION.md)
 
-[2. Legal, Ethical, and Technical]()
+[2. Legal, Ethical, and Technical](2_LEGAL_ETHICAL_TECHNICAL.md)
 
-[3. Technical Content]()
+[3. Technical Content](3_TECHNICAL_CONTENT.md)
 
-[4. Hardware]()
+[4. Hardware](4_HARDWARE.md)
 
-[5. System]()
+[5. System](5_SYSTEM.md)
 
-[6. Kernel]()
+[6. Kernel](6_KERNEL.md)
 
-[7. Shell]()
+[7. Shell](7_SHELL.md)
 
-[8. Administrative Content]()
+[8. Administrative Content](8_ADMINISTRATIVE_CONTENT.md)
 
-[9. Appendices]()
+[9. Appendices](9_APPENDICES.md)
 
-[10. References]()
+[10. References](10_REFERENCES.md)
+
+
+[Back - Documentation Home](../README.md) | [Next - Introduction](1_INTRODUCTION.md)

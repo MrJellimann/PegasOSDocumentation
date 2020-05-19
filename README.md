@@ -7,42 +7,8 @@ The source code for this OS is [here.](https://github.com/MrJellimann/PegasOS)
 
 ======
 
-## Loaders
+Navigation
 
-## Kernel
+[Spring 2020 - Design Document](Design_Document/DESIGN_DOCUMENT.md)
 
-## Shell Terminal
-
-More info can be found [here]()
-
-The planned feature list as of 1/28/2020 is as follows:
-
-### Core Shell Programs
-  
-  * File Manager/File Explorer
-  
-  * Users
-      
-  * WhoAmI
-  
-  * Calculator
-  
-  * DisplaySettings
- -> TextColor, TextSize, Fonts, TextHighlighting (keywords)
-  
-  * TextEditor
- -> Read, Write
-
-### Additional Shell Programs
-
-  * GoKnightScreamer
-  
-  * TicTacToe
-  
-  * CSZork
-  
-  * KnightQuestions
-  
-  * ParkingLotSimulator
-  
-  * Hangman
+[Spring 2020 - Shell Programming](Planning/SHELL_PLANNING.md)
