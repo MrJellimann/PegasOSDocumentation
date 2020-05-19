@@ -1,12 +1,14 @@
 # PegasOS - Hardware
 
+![](/images/4_image1.png "4 - Hardware")
+
 # 4.1 Raspberry Pi Hardware
 
 The Raspberry Pis’ internal hardware has evolved through several generations. All current Raspberry Pis have a Broadcom SoC (System on Chip) that has an ARM integrated CPU (Central Processing chip) and GPU (Graphics Processing Unit). The Raspberry Pi 4 has an 1.5 GHz 64-bit quad-core processor with a Broadcom VideoCORE VI at 500 MHz. The Raspberry Pi 4 is also equipped with on-board 802.11ac Wifi, Bluetooth 5.0, gigabit Ethernet, two USB 2.0 ports, two USB 3.0 ports and dual Micro HDMI ports for dual monitor support.
 
 A system on a chip is essentially all of the parts of a computer in a single chip. This is great for things like the Pi 4 because it uses up much less power than multi-chip designs with similar functionality. The Pi 4 uses a Broadcom BCM 2711 SoC.It uses an ARM 72 core, making it more powerful than its predecessors. Furthermore, it’s GPU is improved to process input and output faster. This SoC is capable of addressing more memory, continues to use heat spreading technology, and a natively attached Ethernet controller.
 
-[Image Goes Here]()
+![Raspberry Pi Diagram](/images/4_image2.png "Raspberry Pi 4")
 
 Credit to: Raspberry Pi Company
 
@@ -14,7 +16,9 @@ Credit to: Raspberry Pi Company
 
 One feature of the Raspberry Pi is the GPIO (General-Purpose Input/Output) pins along the top edge of the board. Most Raspberry Pi boards have a 40-pin GPIO header except Pi 1 Model B+ (2014). Each GPIO pin on the board is used for a wide range of purposes. Here is a diagram showing how the GPIO pins are assigned.
 
-[Image Goes Here]()
+![GPIO Diagram](/images/4_image3.png "Raspberry Pi GPIO Diagram")
+
+![Pin Diagram](/images/4_image4.png "Raspberry Pi Pin Diagram")
 
 Credit to: Raspberry Pi Company
 
