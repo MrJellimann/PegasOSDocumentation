@@ -1,6 +1,6 @@
 # PegasOS - Hardware
 
-![4 - Hardware](/images/4_Hardware/4_image1.png?raw=true "4 - Hardware")
+![4 - Hardware](images/4_Hardware/4_image1.png?raw=true "4 - Hardware")
 
 # 4.1 Raspberry Pi Hardware
 
