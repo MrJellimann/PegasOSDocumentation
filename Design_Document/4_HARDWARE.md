@@ -34,7 +34,7 @@ The Pi 4 does a different method, because it loads the code contained in an EEPR
 
 The start.elf files reads the system configurations, loads the kernel image, reads the kernel parameters, and releases the reset signal on the arm to boot up the kernel. It also should be noted that prior to October 2012, the 2nd stage bootloader would load a 3rd stage bootloader called the loader.bin file. The loader.bin file handles the elf files, but has since then been removed in the booting process because the bootcode.bin file has been updated to load the elf files instead.
 
-[Image Goes Here]()
+![EEPROM Flowchart](images/4_Hardware/4_image5.png "EEPROM Flowchart")
 
 ## 4.1.3 EEPROM
 
@@ -50,7 +50,7 @@ Since the goal of this project is to install an OS out of the box of any Pi 4, w
 
 This is not an end-all to any sort of customization, however. The EEPROM still has a readily available config file. From here, we will do most of our low-level edits to it to prevent any previously stated roadblocks.
 
-[Image Goes Here]()
+![EEPROM Flowchart 2](images/4_Hardware/4_image6.png "EEPROM Flowchart 2")
 
 ## 4.1.4 Basic Kernel Test
 
@@ -60,7 +60,7 @@ A frame buffer is a portion of memory that contains the frames that are sent to 
 
 To test our kernel without programming a framebuffer, we bought a USB-to-TTL cable that will send input into the serial console. Following the picture below, the black lead needs to attach to the GND pin, the white lead to the TXD pin, and green lead to the RXD pin.
 
-[Image Goes Here]()
+![USB-to-TTL Cable Diagram](images/4_Hardware/4_image7.png "TTL Cable Diagram")
 
 Credit to: Adafruit
 
@@ -144,7 +144,7 @@ The mailbox has 8 channels. A channel is a number that tells you and the GPU wha
 
 The page table maps virtual memory to physical memory. The processes in memory use virtual memory while the hardware uses physical, and the page table is what reconciles the two. The page table first checks the TLB to see if the memory has been recently used and stored in the cache. If it is not there, a TLB miss occurs and the mapping is looked up in the page table. This is the tricky part, because there are a couple different page tables you could use.
 
-[Image Goes Here]()
+![Page Table Flowchart](images/4_Hardware/4_image8.png "Page Table Flowchart")
 
 Source: https://en.wikipedia.org/wiki/Page_table
 
@@ -154,7 +154,7 @@ There are several ways of implementing a page table, each having different trade
 
 ARM naturally supports multi-level page tables. This means that the page table is split into levels that point to lower ones. Only the lowest level have frames. This also means that accessing one piece of memory takes several different level accesses to reach. This may seem counterintuitive, but having multi-level paging means that the page table can be split into many parts and page itself. This is especially useful if the entirety of the page table cannot fit in one part of memory. In general, 64-bit systems use 4-page tables.
 
-[Image Goes Here]()
+![Page Table Virtual Addressing](images/4_Hardware/4_image9.png "Page Table Virtual Addressing")
 
 Source: https://www.geeksforgeeks.org/multilevel-paging-in-operating-system/
 
@@ -164,7 +164,7 @@ Although using a page table can help store vast amounts of memory addresses, the
 
 Although the TLB is not absolutely required, not having one means you are almost working with bare metal, which is very insecure and can lead to some unfortunate errors. Also, having a TLB speeds up the lookup process if you already have certain commonly used addresses stay inside the cache.
 
-[Image Goes Here]()
+![Translation Look-aside Buffer Flowchart](images/4_Hardware/4_image10.png "Translation Look-aside Buffer Flowchart")
 
 Silberschatz, Galvin, Gagne, Abraham, Peter B. , Greg (2009). Operating Systems Concepts. United States of America: John Wiley & Sons. INC. ISBN 978-0-470-12872-5.
 
@@ -176,7 +176,7 @@ For our project, we decided to keep this out of scope so as to not overwhelm the
 
 Because we are not implementing page coloring, our process will be a little more streamlined. The addresses will not have a separate virtual and physical address, and will instead be the same on both fronts. It is important to note that this is very secure to program, but due to the scope of our project we are limiting functionality on this feature.
 
-[Image Goes Here]()
+![Page Coloring Example](images/4_Hardware/4_image11.png "Page Coloring Example")
 
 Source: https://en.wikipedia.org/wiki/Cache_coloring
 
@@ -184,11 +184,11 @@ Source: https://en.wikipedia.org/wiki/Cache_coloring
 
 Reference for this section: https://developer.arm.com/docs/den0024/a/armv8-registers
 
-[Image Goes Here]()
+![General Purpose ARM Registers](images/4_Hardware/4_image12.png "ARM Registers")
 
 There are 31 x64 bit general purpose registers accessible at all exception levels. Each register has a 32-bit form for backward compatibility. There are also several special registers:
 
-[Image Goes Here]()
+![ARM Special Registers](images/4_Hardware/4_image13.png "ARM Special Registers")
 
 **Zero Register**
 
@@ -239,7 +239,7 @@ Unlike ARMv7, ARMv8 does not have a current program status register. The compone
 
 The System Control Register (SCTLR): Controls standard memory, system facilities, and provides status for functions in the core.
 
-[Image Goes Here]()
+![System Registers Diagram](images/4_Hardware/4_image14.png "System Registers")
 
 ## 4.1.15 Endianness
 
@@ -263,11 +263,11 @@ For our sake, we are designing our system to run on only one core for now. In th
 
 ## 4.1.18 Caches
 
-[Image Goes Here]()
+![Cache Arrangement Example](images/4_Hardware/4_image15.png "Cache Arrangement")
 
 The cache is a vital part of an OS because it is very quick-access memory. In ARM systems, caches are usually two or more levels. A cache is required to hold three things: address, data information, and status information.
 
-[Image Goes Here]()
+![Cache Terminology](images/4_Hardware/4_image16.png "Cache Terminology")
 
 ## 4.1.19 Cache Controller
 
@@ -318,7 +318,7 @@ Cache maintenance is required to remove stale data or update MMU changes. Here i
 
 The MMU is an actual physical piece of hardware. It is vital, because it translates virtual addresses to physical addresses. It also checks access permissions and gives us control over cacheable memory.
 
-[Image Goes Here]()
+![Memory Management Unit Diagram](images/4_Hardware/4_image17.png "MMU Diagram")
 
 Source:
 https://en.wikipedia.org/wiki/Memory_management_unit#cite_note-TanenMOS-1
@@ -341,7 +341,7 @@ The MMU lets you decide whether or not you want to cache a certain memory. For e
 
 In AArch64, bits 63-47 must be either all 1s or all 0s. This is the base address and will trigger an error if not done correctly. Bits 41-29 map to a page table entry, which maps to the actual physical address. If the address is valid, it will allow memory access. Bits 28-0 give an offset within the section to combine with the physical address.
 
-[Image Goes Here]()
+![Translating Virtual Addresses Diagram](images/4_Hardware/4_image18.png "Translating Virtual Addresses Diagram")
 
 ## 4.1.27 Configuring the MMU
 
@@ -353,7 +353,7 @@ The rest of the MMU needs to be set up by level. EL0 is where the user interface
 
 # 4.2 I/O Manager
 
-[Image Goes Here]()
+![PCI Bus Diagram](images/4_Hardware/4_image19.png "PCI Bus Diagram")
 
 https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/13_IOSystems.html
 
@@ -373,7 +373,7 @@ In general, there seem to be these two lines of thinking: constantly check regis
 
 Encapsulating the I/O Manager is better than the registered approach for a couple of reasons: for one, it allows for us to add and remove drivers without having to interact directly with the kernel. Second, it allows the kernel to operate without stopping every instruction to check a register. Third, it creates a single interface that we can update and use to communicate with possible deprecated drivers.
 
-[Image Goes Here]()
+![I/O Manager Flowchart](images/4_Hardware/4_image20.png "I/O Manager Flowchart")
 
 [Back - Technical Content](3_TECHNICAL_CONTENT.md) | [Next - System](5_SYSTEM.md) | 
 [Design Document Home](DESIGN_DOCUMENT.md) | [Documentation Home](../README.md)
