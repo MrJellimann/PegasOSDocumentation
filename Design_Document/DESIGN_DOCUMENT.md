@@ -13,7 +13,7 @@ For your convenience, the final design document has been converted into text pag
 
 [1. Introduction](1_INTRODUCTION.md)
 
-[2. Legal, Ethical, and Technical]()
+[2. Legal, Ethical, and Technical](2_LEGAL_ETHICAL_TECHNICAL.md)
 
 [3. Technical Content]()
 
