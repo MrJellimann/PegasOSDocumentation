@@ -8,7 +8,6 @@ The most up-to-date information will always be kept in the home directory of thi
 
 For your convenience, the final design document has been converted into text pages you can view on your browser. You may also download the final design document that was submitted as a .pdf, which is included in this directory.
 
-### Final Design Document
 ## PegasOS
 
 [1. Introduction](1_INTRODUCTION.md)
