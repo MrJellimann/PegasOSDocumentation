@@ -389,8 +389,8 @@ There are several system calls that PegasOS allows processes to use, which are c
 
 ## 5.6.1 System Diagnostics
 
-`*For the time being PegasOS will only support one clock, that being the
-hardware’s clock.`
+*\*For the time being PegasOS will only support one clock, that being the
+hardware’s clock.*
 
 `int get_clocktime()`
 
