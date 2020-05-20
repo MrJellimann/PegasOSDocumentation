@@ -325,43 +325,43 @@ To change the user’s details, press the ‘C’ key and the following sub-menu
 
 Selecting ‘P’ or ‘U’ for either Password Change or Username Change respectively will require the user to re-enter their password to confirm it is a change they wish to make.
 
-[Image Goes Here]()
+![Password Change Old Password](images/5_System/5_image22.png "Password Change Old Password")
 
 Note: Passwords will NOT be shown as they are typed.
 
 After their password has been confirmed, if the user selects to change their password, the following prompt will appear.
 
-[Image Goes Here]()
+![Successfully changed Password](images/5_System/5_image23.png "Successfully changed Password")
 
 Upon entering the new password and confirming the new password by re-entering it, the registry file will be updated to reflect the new password, and the following confirmation will be printed to the screen.
 
 If the user selects to change their username, the following prompts will appear.
 
-[Image Goes Here]()
+![Set New Username](images/5_System/5_image24.png "Set New Username")
 
 The user will be required to enter the new username and confirm it. Once the username has been confirmed, the user’s username will be set to the new username, and a confirmation message will be printed to the screen.
 
 If the username does not match between confirmations, the username will not be set and the user will be returned to the User Details menu.
 
-[Image Goes Here]()
+![New Username Does Not Match](images/5_System/5_image25.png "New Username Does Not Match")
 
 If the new password does not match between entries, an error will be reported to the user and they will be returned to the User Details menu.
 
-[Image Goes Here]()
+![New Password Does Not Match](images/5_System/5_image26.png "New Password Does Not Match")
 
 If the ‘A’ key is pressed for Access Permissions, the user will be required to enter the system master’s password.
 
-[Image Goes Here]()
+![Set Access Permissions](images/5_System/5_image27.png "Set Access Permissions")
 
 If entered correctly, the user will be able to elevate their privilege access to system-level through the following sub-menu. A ‘\*’ will indicate which level of permissions the user currently has.
 
-[Image Goes Here]()
+![Permissions Menu](images/5_System/5_image28.png "Permissions Menu")
 
 Upon pressing the ‘S’ key for System Level Permissions, the following prompt will appear. Upon confirmation that the user understands the risks, they will be granted the same privileges as that of the system master. They will then be returned to the Permissions Menu.
 
-[Image Goes Here]()
+![System Permissions Warning](images/5_System/5_image29.png "System Permissions Warning")
 
-[Image Goes Here]()
+![System Permissions Example](images/5_System/5_image30.png "System Permissions Example")
 
 Pressing the ‘B’ key will return the user to the User Details Menu.
 
@@ -369,19 +369,19 @@ Pressing the ‘B’ key will return the user to the User Details Menu.
 
 Pressing the ‘L’ key to select Logout will log the current user out of the system. This will display the following prompt, and return the user to the Shell as the system ‘guest’ user.
 
-[Image Goes Here]()
+![Log-Out Example](images/5_System/5_image31.png "Log-Out Example")
 
 <ins>Switch User:</ins>
 
 Pressing the ‘S’ key to select Switch User will allow the current user to log-out then immediately sign-in a new user. This process is the same as the ‘Existing User’ command for the Log-In Menu. For more information on this process, please view the guide on using the Log-In Menu.
 
-[Image Goes Here]()
+![Switch User Prompt](images/5_System/5_image32.png "Switch User Prompt")
 
 <ins>Quit:</ins>
 
 Pressing the ‘Q’ key to select Quit will return the user to the terminal shell. This will not logout the user.
 
-[Image Goes Here]()
+![Quit User Menu](images/5_System/5_image33.png "Quit User Menu")
 
 # 5.6 System Calls
 
@@ -467,7 +467,7 @@ Sets the current process’ priority according to the argument ‘p’. Priority
 
 ## 5.6.4 File Manipulation
 
-[Image Goes Here]()
+![Process File Structure](images/5_System/5_image34.png "Process File Structure")
 
 `int close(int fileId)`
 
@@ -522,15 +522,15 @@ Before going into full detail on how all the system calls will be executed, we w
 
 So with the table above, the assembler will use these values to distinguish the separate commands by storing the value into the register which represents the corresponding command being executed. As mentioned above, these are only for the syscall commands we have right now. There will be more commands added for needed functionality when we implement them into the operating system. Below will be an example of how we will execute system call functions. The examples below are samples of the Linus 0x80 systems, we will be implementing it in a similar fashion.
 
-[Image Goes Here]()
+![System Call in C](images/5_System/5_image35.png "System Call in C")
 
 The program demonstrated above is a sample code of System Calls for a simple Hello World print to the screen program. The write command is given the proper parameters where the 1 signifies that it will be written to stdout. The string in the middle is what will be written to the screen, and 12 is the number of bytes to be written from the string given. The exit system call command simply is used to signify that the program has ended and the 0 is simply the return value.
 
-[Image Goes Here]()
+![System Call in Assembly - Header](images/5_System/5_image36.png "System Call in Assembly - Header")
 
 When the assembler begins to generate the code needed for the given system call code, it will create a string variable to hold the string given as a parameter. It also creates the starting variable name of `“_start”` where the assembly code begins.
 
-[Image Goes Here]()
+![System Call in Assembly - Body](images/5_System/5_image37.png "System Call in Assembly - Body")
 
 The last part of this example is the generated assembly code that will be executed by the CPU. One can see that we are storing the integer value corresponding to the command we are executing in the %eax register and the other parameters stored in their respective registers. Once these are done, it is then executed since the command ‘int $0x80’ is encountered. When completed, it moves onto performing the assembly code for `“_exit(0)”`.
 
