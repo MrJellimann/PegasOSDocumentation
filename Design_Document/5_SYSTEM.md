@@ -1,52 +1,38 @@
 # PegasOS - System
 
-5.1 System Directories
-5.1.1 PegasOS Root Directory
-PegasOS will follow the general layout of the Linux systems, with the system’s
-core at the lowest possible root of the file system and additional directories stemming
-from there. The system will have a minimal root directory that will contain all of the
-system’s files necessary for operation. Included in this is a directory for users of the
-system, which will allow for multiple users to have their own ‘desktops’ and files that will
-be accessible only by them and the system admin or system master.
-The root directory of PegasOS will only be able to be modified by the kernel itself
-- which should not be modifying the structure of the directories - or by the system
-master. Because the system master will be able to modify this root directory, it is
-possible that the directory can be tampered with in such a way that the system will no
-longer be able to function correctly. Should this happen, the system will need to be
-reinstalled.
-The purpose of the root directory is to keep all system-related data as close to
-the system as possible, which means it will be at the lowest level of the system such
-that it does not interfere with the user’s use of the system, nor can it be accessed by the
-average user who uses the system. In this way, the workings of the system are
-protected from accidental tampering, however, it is still accessible to those who wish to
-have access to it with the caveat that only the system master can modify the root
-directory. Normal users may still see what files are in these directories.
-The structure and contents of the root directory may change over time, however,
-the aim is to keep the root directory simplistic such that it only contains what is
-necessary. This will allow us to keep the system’s usage of memory to a minimum, and
-allow the user to use as much remaining space on the SD card as possible. As an
-added bonus, the less memory that the system takes up, the more it can fit into RAM to
-keep the system as fast as possible.
-64
-5.1.2 PegasOS Root Directory Overview
+[Image Goes Here]()
+
+# 5.1 System Directories
+
+## 5.1.1 PegasOS Root Directory
+
+PegasOS will follow the general layout of the Linux systems, with the system’s core at the lowest possible root of the file system and additional directories stemming from there. The system will have a minimal root directory that will contain all of the system’s files necessary for operation. Included in this is a directory for users of the system, which will allow for multiple users to have their own ‘desktops’ and files that will be accessible only by them and the system admin or system master.
+
+The root directory of PegasOS will only be able to be modified by the kernel itself - which should not be modifying the structure of the directories - or by the system master. Because the system master will be able to modify this root directory, it is possible that the directory can be tampered with in such a way that the system will no longer be able to function correctly. Should this happen, the system will need to be reinstalled.
+
+The purpose of the root directory is to keep all system-related data as close to the system as possible, which means it will be at the lowest level of the system such that it does not interfere with the user’s use of the system, nor can it be accessed by the average user who uses the system. In this way, the workings of the system are protected from accidental tampering, however, it is still accessible to those who wish to have access to it with the caveat that only the system master can modify the root directory. Normal users may still see what files are in these directories.
+
+The structure and contents of the root directory may change over time, however, the aim is to keep the root directory simplistic such that it only contains what is necessary. This will allow us to keep the system’s usage of memory to a minimum, and allow the user to use as much remaining space on the SD card as possible. As an added bonus, the less memory that the system takes up, the more it can fit into RAM to keep the system as fast as possible.
+
+## 5.1.2 PegasOS Root Directory Overview
 
 [Image Goes Here]()
 
 <dl>
 <dt>Boot</dt>
-This directory will contain all of the necessary files for boot-up, apart from those contained within the EEPROM already on the Raspberry Pi. This will primarily be made up of .elf files that set up the rest of the system for operation. This directory may contain other files or information related to the boot-up of the system.
+<dd>This directory will contain all of the necessary files for boot-up, apart from those contained within the EEPROM already on the Raspberry Pi. This will primarily be made up of .elf files that set up the rest of the system for operation. This directory may contain other files or information related to the boot-up of the system.</dd>
 
 <dt>Drivers</dt>
-This directory will contain any hardware drivers that the system will use to interact with various pieces of hardware, such as keyboards, speakers, monitors, etc.
+<dd>This directory will contain any hardware drivers that the system will use to interact with various pieces of hardware, such as keyboards, speakers, monitors, etc.</dd>
 
 <dt>Master</dt>
-This is the admin or system master’s directory, which will reflect that of a typical user’s directories. The key difference is that the system master will be able to add, modify, and remove files from any location on the system - essentially giving them kernel-level access, much like Linux’s root user.
+<dd>This is the admin or system master’s directory, which will reflect that of a typical user’s directories. The key difference is that the system master will be able to add, modify, and remove files from any location on the system - essentially giving them kernel-level access, much like Linux’s root user.</dd>
 
 <dt>Prog</dt>
-This directory will contain all binaries for programs that can be executed by the system shell.
+<dd>This directory will contain all binaries for programs that can be executed by the system shell.</dd>
 
 <dt>Users</dt>
-This directory will contain a sub-directory for every user that is using the system. Each user directory will contain its own ‘documents’ and ‘desktop’ directories, to offer the users some built-in categorization should they choose to use it. While there is no graphical interface, the ‘desktop’ directory would be equivalent to the directory that is displayed on the main screen of the operating system.
+<dd>This directory will contain a sub-directory for every user that is using the system. Each user directory will contain its own ‘documents’ and ‘desktop’ directories, to offer the users some built-in categorization should they choose to use it. While there is no graphical interface, the ‘desktop’ directory would be equivalent to the directory that is displayed on the main screen of the operating system.</dd>
 
 <dt>System</dt>
 <dd>This directory will contain all binaries and data for system programs, calls, and services. Respectively, the binaries will be contained within the ‘bin’ subdirectory and all data will be contained within the ‘data’ subdirectory. Within the ‘data’ subdirectory, there will be three further subdirectories that further categorize the data contained within. The ‘users’ subdirectory will contain a user registry file for every user registered with the system. The ‘log’ subdirectory will contain all system logs and information that the system may need to refer to or record. The ‘locale’ subdirectory will contain all system localization files needed for translations of system dialogue.</dd>
