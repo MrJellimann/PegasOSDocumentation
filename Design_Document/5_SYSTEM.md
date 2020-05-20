@@ -307,11 +307,15 @@ can never be too careful.
 5.4.5 User Password Storage
 Of course, a password is only as secure as how it is stored. For this reason,
 PegasOS will store user passwords on the machine as a salted and hashed password.
+
 For the sake of transparency, this process will be as follows:
+
 1. Salt is applied to the password
 : This salt will come from the username, which will allow for users to choose the same password and result in different hashes for the password, keeping both users more secure and accounting for edge cases in which multiple users unknowingly pick the same password.
+
 2. The password is sent into a hashing algorithm.
 : After the salt is applied to the password, it is bundled up and sent into a one-way hashing algorithm.
+
 3. The resulting hash value is stored in the user’s registry file.
 : The hash will be stored as a 256-bit hash, as an array of 32 chars, where position 0 in the char array represents the highest 8 bits of the hash.
 
