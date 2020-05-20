@@ -1,6 +1,6 @@
 # PegasOS - System
 
-[Image Goes Here]()
+![5 - System](images/5_System/5_image1.png "5 - System")
 
 # 5.1 System Directories
 
@@ -16,7 +16,7 @@ The structure and contents of the root directory may change over time, however, 
 
 ## 5.1.2 PegasOS Root Directory Overview
 
-[Image Goes Here]()
+![Root Directory Overview](images/5_System/5_image2.png "Root Directory Overview")
 
 <dl>
 <dt>Boot</dt>
@@ -38,7 +38,7 @@ The structure and contents of the root directory may change over time, however, 
 <dd>This directory will contain all binaries and data for system programs, calls, and services. Respectively, the binaries will be contained within the ‘bin’ subdirectory and all data will be contained within the ‘data’ subdirectory. Within the ‘data’ subdirectory, there will be three further subdirectories that further categorize the data contained within. The ‘users’ subdirectory will contain a user registry file for every user registered with the system. The ‘log’ subdirectory will contain all system logs and information that the system may need to refer to or record. The ‘locale’ subdirectory will contain all system localization files needed for translations of system dialogue.</dd>
 </dl>
 
-[Image Goes Here]()
+![System Subdirectory Overview](images/5_System/5_image3.png "System Subdirectory Overview")
 
 # 5.2 System Set-Up
 
@@ -90,7 +90,7 @@ Localization files will be contained in a separate directory (as specified in th
 
 The system will follow the guidelines as described in the following diagram. Please note that the code displayed is an approximation of what will be in the final system.
 
-[Image Goes Here]()
+![Localization File Example](images/5_System/5_image4.png "Localization File Example")
 
 ## 5.3.3 Loading Translated Text
 
@@ -118,7 +118,7 @@ By default, the ‘guest’ user will be signed in if no users have set up the s
 
 User data will be contained within a registry file, which will be formatted as follows:
 
-[Image Goes Here]()
+![Registry File Structure](images/5_System/5_image5.png "Registry File Structure")
 
 These files are read-only in most circumstances. If the user wishes to change their username, they must first confirm with their password that they wish to change their username, which will allow them to change the username hash by entering in their new desired username. The password is changed in the same way, however, the hash is salted. The values ‘usercolor’ and ‘dircolor’ can be changed through the user’s Details menu, and do not require a password re-entry. The super-user flag, ‘superP’ can only be changed with the master’s permission, which requires a master’s password to grant.
 
@@ -245,67 +245,67 @@ While the majority of the user’s functionality is used through the system’s 
 
 To access the log-in subsystem, use the ‘login’ command in the shell. This will bring up the following menu.
 
-[Image Goes Here]()
+![Log-In Menu](images/5_System/5_image6.png "Log-In Menu")
 
 From here, the user presses the key indicated in the brackets to access the corresponding menu option. The selection does not need to be capitalized, only the key needs to be pressed. If an invalid selection is given, the following prompt will be displayed and the menu will return.
 
-[Image Goes Here]()
+![Invalid Selection Example](images/5_System/5_image7.png "Invalid Selection Example")
 
 Existing User:
 
 To log-in as an existing user, press the ‘E’ key which will then bring up the following prompt.
 
-[Image Goes Here]()
+![Enter Username](images/5_System/5_image8.png "Enter Username")
 
 If the username entered does not match a user account currently in the registry, the following prompt will appear. Otherwise, the system will continue and ask for that user’s password.
 
-[Image Goes Here]()
+![User Does Not Exist](images/5_System/5_image9.png "User Does Not Exist")
 
 If ‘Y’ or ‘yes’ is selected, then the user will be directed through the same prompts as the New User command (see New User for more information). If ‘N’ or ‘no’ is selected, then the user will be returned to the Log-In Menu with the previous user being logged in.
 
-[Image Goes Here]()
+![User Not Created](images/5_System/5_image10.png "User Not Created")
 
 If the username entered matches a user account in the registry, then the following prompt will appear.
 
-[Image Goes Here]()
+![Enter Password Prompt](images/5_System/5_image11.png "Enter Password Prompt")
 
 Upon the password being entered, it will be checked alongside the system’s copy of the user’s password. If there is a match, then the user will be logged in and the following confirmation will be displayed. Then the User Menu will be displayed.
 
-[Image Goes Here]()
+![Successful Log-In](images/5_System/5_image12.png "Successful Log-In")
 
 If the password does not match, the following error will be displayed. After pressing any key, the user will return to the Log-In Menu.
 
-[Image Goes Here]()
+![Failed Log-In](images/5_System/5_image13.png "Failed Log-In")
 
 New User:
 
 To create a new user, press the ‘N’ key which will then bring up the following prompt.
 
-[Image Goes Here]()
+![New User Prompt](images/5_System/5_image14.png "New User Prompt")
 
 Upon entering the username, the following prompts will appear.
 
-[Image Goes Here]()
+![New User Password Prompt](images/5_System/5_image15.png "New User Password Prompt")
 
 If the password entered between the two password prompts does not match, the following error will be displayed.
 
-[Image Goes Here]()
+![Retry New User Password](images/5_System/5_image16.png "Retry New User Password")
 
 If ‘Y’ or ‘yes’ is selected, then the user will be given an additional attempt to create their password. If this attempt is failed as well, the user will not be created and they will return to the log-in screen.
 
-[Image Goes Here]()
+![Failed to Create New User](images/5_System/5_image17.png "Failed to Create New User")
 
 If ‘N’ or ‘no’ is selected, then the user will return to the Log-In Menu.
 
 If the password entered between the two password prompts does match, the following confirmation will be displayed, the system’s user registry file will be updated, and the user will be logged in.
 
-[Image Goes Here]()
+![New User Created](images/5_System/5_image18.png "New User Created")
 
 Registry:
 
 To view the list of currently registered users, press the ‘R’ key and the system will print out the list of all users in the system. At a minimum this will consist of the system master and a guest user.
 
-[Image Goes Here]()
+![Display User Registry](images/5_System/5_image19.png "Display User Registry")
 
 Quit:
 
@@ -315,13 +315,13 @@ To return to the terminal shell, press the ‘Q’ key and the system will termi
 
 To access the user menu subsystem, enter “user” from the shell and the following menu will appear.
 
-[Image Goes Here]()
+![User Menu](images/5_System/5_image20.png "User Menu")
 
 **Change User Details:**
 
 To change the user’s details, press the ‘C’ key and the following sub-menu will open.
 
-[Image Goes Here]()
+![User Details](images/5_System/5_image21.png "User Details")
 
 Selecting ‘P’ or ‘U’ for either Password Change or Username Change respectively will require the user to re-enter their password to confirm it is a change they wish to make.
 
