@@ -309,32 +309,20 @@ Of course, a password is only as secure as how it is stored. For this reason,
 PegasOS will store user passwords on the machine as a salted and hashed password.
 For the sake of transparency, this process will be as follows:
 1. Salt is applied to the password
-This salt will come from the username, which will allow for users to choose
-the same password and result in different hashes for the password,
-keeping both users more secure and accounting for edge cases in which
-multiple users unknowingly pick the same password.
+: This salt will come from the username, which will allow for users to choose the same password and result in different hashes for the password, keeping both users more secure and accounting for edge cases in which multiple users unknowingly pick the same password.
 2. The password is sent into a hashing algorithm.
-After the salt is applied to the password, it is bundled up and sent into a
-one-way hashing algorithm.
+: After the salt is applied to the password, it is bundled up and sent into a one-way hashing algorithm.
 3. The resulting hash value is stored in the user’s registry file.
-The hash will be stored as a 256-bit hash, as an array of 32 chars, where
-position 0 in the char array represents the highest 8 bits of the hash.
-77
-5.4.6 User Permissions
-Depending on the ‘type’ of user permissions that the user has, certain actions
-within PegasOS cannot be performed. User permissions can be of two types: system
-administrator (master) or standard. Master users may make any changes to the system
-as they see fit, much like a root user or sudoer can in Linux. Standard users cannot
-make these changes, but with the master account’s permission they may upgrade their
-permissions to that of a master user.
-The main difference is that master users have full control over the system, and
-are able to create files and directories wherever they please. They are also allowed to
-modify, and remove files and directories wherever they please. This means that great
-care must be taken when working in the root directory of the system, as it is
-possible to irreversibly damage the system. For the average user, this will not be a
-concern, as most system files that the average user can access are read-only, or
-otherwise untouchable.
+: The hash will be stored as a 256-bit hash, as an array of 32 chars, where position 0 in the char array represents the highest 8 bits of the hash.
+
+## 5.4.6 User Permissions
+
+Depending on the ‘type’ of user permissions that the user has, certain actions within PegasOS cannot be performed. User permissions can be of two types: system administrator (master) or standard. Master users may make any changes to the system as they see fit, much like a root user or sudoer can in Linux. Standard users cannot make these changes, but with the master account’s permission they may upgrade their permissions to that of a master user.
+
+The main difference is that master users have full control over the system, and are able to create files and directories wherever they please. They are also allowed to modify, and remove files and directories wherever they please. **This means that great care must be taken when working in the root directory of the system, as it is possible to irreversibly damage the system.** For the average user, this will not be a concern, as most system files that the average user can access are read-only, or otherwise untouchable.
+
 Full control over the system includes functions such as, but not limited to:
+
 - Changing the system clock
 - Terminating system processes
 - Modifying the system directory (root)
@@ -342,85 +330,56 @@ Full control over the system includes functions such as, but not limited to:
 - Changing user settings
 - Deleting and creating users
 - Viewing system logs
-78
-5.5 User Subsystem
-The user subsystem is the system which handles user log-in, creation, deletion,
-and handles the display and changing of user info. The following describes the various
-menus within the PegasOS User subsystem, which is made up of two key systems. The
-first of these being the log-in system, which allows existing users to log-in as well as
-allow new users to create a new user account. This log-in system also allows the user
-to see a list of currently enrolled users on the system. The second being the user-menu
-system, which allows the logged-in user to adjust some of their account settings,
-preferences, and permissions. This section will also serve as a guide to how to use
-these systems, and detail all of the sub-menus within both services.
-The system will have no hard limit on the number of users on that particular
-install, however if a user account is no longer needed, please be sure to remove that
-user account. As each user account is stored in a separate user registry file, and a new
-subdirectory is created for each user, this can quickly add up in the amount of space
-used on the SD Card, restricting space for other uses of the system.
-Since user accounts are the primary method in which the system is interacted
-with, it is necessary for there to at least be one user account on the system at all times.
-While the master account can perform almost any operation on the system, they will not
-be allowed to remove themselves from the system. In addition to this, every system
-install will come with two premade user accounts, those being the ‘guest’ account and
-the aforementioned ‘master’ account. This will make logging in to the system easy for
-quick system setup and modification, and also allow for non-permanent users of the
-system to still use the system and be able to access all of the system’s features.
-While the majority of the user’s functionality is used through the system’s Shell
-component and the included programs - creating users, switching users, and logging
-users in and out is done through the aforementioned log-in and user menus.
-79
-5.5.1 Log-In Menu
-To access the log-in subsystem, use the ‘login’ command in the shell. This will
-bring up the following menu.
+
+# 5.5 User Subsystem
+
+The user subsystem is the system which handles user log-in, creation, deletion, and handles the display and changing of user info. The following describes the various menus within the PegasOS User subsystem, which is made up of two key systems. The first of these being the log-in system, which allows existing users to log-in as well as allow new users to create a new user account. This log-in system also allows the user to see a list of currently enrolled users on the system. The second being the user-menu system, which allows the logged-in user to adjust some of their account settings, preferences, and permissions. This section will also serve as a guide to how to use these systems, and detail all of the sub-menus within both services.
+
+The system will have no hard limit on the number of users on that particular install, however if a user account is no longer needed, please be sure to remove that user account. As each user account is stored in a separate user registry file, and a new subdirectory is created for each user, this can quickly add up in the amount of space used on the SD Card, restricting space for other uses of the system.
+
+Since user accounts are the primary method in which the system is interacted with, it is necessary for there to at least be one user account on the system at all times. While the master account can perform almost any operation on the system, they will not be allowed to remove themselves from the system. In addition to this, every system install will come with two premade user accounts, those being the ‘guest’ account and the aforementioned ‘master’ account. This will make logging in to the system easy for quick system setup and modification, and also allow for non-permanent users of the system to still use the system and be able to access all of the system’s features.
+
+While the majority of the user’s functionality is used through the system’s Shell component and the included programs - creating users, switching users, and logging users in and out is done through the aforementioned log-in and user menus.
+
+## 5.5.1 Log-In Menu
+
+To access the log-in subsystem, use the ‘login’ command in the shell. This will bring up the following menu.
 
 [Image Goes Here]()
 
-From here, the user presses the key indicated in the brackets to access the
-corresponding menu option. The selection does not need to be capitalized, only the key
-needs to be pressed. If an invalid selection is given, the following prompt will be
-displayed and the menu will return.
+From here, the user presses the key indicated in the brackets to access the corresponding menu option. The selection does not need to be capitalized, only the key needs to be pressed. If an invalid selection is given, the following prompt will be displayed and the menu will return.
 
 [Image Goes Here]()
 
 Existing User:
-To log-in as an existing user, press the ‘E’ key which will then bring up the
-following prompt.
+
+To log-in as an existing user, press the ‘E’ key which will then bring up the following prompt.
 
 [Image Goes Here]()
 
-If the username entered does not match a user account currently in the registry,
-the following prompt will appear. Otherwise, the system will continue and ask for that
-user’s password.
+If the username entered does not match a user account currently in the registry, the following prompt will appear. Otherwise, the system will continue and ask for that user’s password.
 
 [Image Goes Here]()
 
-If ‘Y’ or ‘yes’ is selected, then the user will be directed through the same prompts
-as the New User command (see New User for more information). If ‘N’ or ‘no’ is
-selected, then the user will be returned to the Log-In Menu with the previous user being
-logged in.
+If ‘Y’ or ‘yes’ is selected, then the user will be directed through the same prompts as the New User command (see New User for more information). If ‘N’ or ‘no’ is selected, then the user will be returned to the Log-In Menu with the previous user being logged in.
 
 [Image Goes Here]()
 
-If the username entered matches a user account in the registry, then the
-following prompt will appear.
+If the username entered matches a user account in the registry, then the following prompt will appear.
 
 [Image Goes Here]()
 
-Upon the password being entered, it will be checked alongside the system’s copy
-of the user’s password. If there is a match, then the user will be logged in and the
-following confirmation will be displayed. Then the User Menu will be displayed.
+Upon the password being entered, it will be checked alongside the system’s copy of the user’s password. If there is a match, then the user will be logged in and the following confirmation will be displayed. Then the User Menu will be displayed.
 
 [Image Goes Here]()
 
-If the password does not match, the following error will be displayed. After
-pressing any key, the user will return to the Log-In Menu.
+If the password does not match, the following error will be displayed. After pressing any key, the user will return to the Log-In Menu.
 
 [Image Goes Here]()
 
 New User:
-To create a new user, press the ‘N’ key which will then bring up the following
-prompt.
+
+To create a new user, press the ‘N’ key which will then bring up the following prompt.
 
 [Image Goes Here]()
 
@@ -428,126 +387,108 @@ Upon entering the username, the following prompts will appear.
 
 [Image Goes Here]()
 
-If the password entered between the two password prompts does not match, the
-following error will be displayed.
+If the password entered between the two password prompts does not match, the following error will be displayed.
 
 [Image Goes Here]()
 
-If ‘Y’ or ‘yes’ is selected, then the user will be given an additional attempt to
-create their password. If this attempt is failed as well, the user will not be created and
-they will return to the log-in screen.
+If ‘Y’ or ‘yes’ is selected, then the user will be given an additional attempt to create their password. If this attempt is failed as well, the user will not be created and they will return to the log-in screen.
 
 [Image Goes Here]()
 
 If ‘N’ or ‘no’ is selected, then the user will return to the Log-In Menu.
-If the password entered between the two password prompts does match, the
-following confirmation will be displayed, the system’s user registry file will be updated,
-and the user will be logged in.
+
+If the password entered between the two password prompts does match, the following confirmation will be displayed, the system’s user registry file will be updated, and the user will be logged in.
 
 [Image Goes Here]()
 
 Registry:
-To view the list of currently registered users, press the ‘R’ key and the system will
-print out the list of all users in the system. At a minimum this will consist of the system
-master and a guest user.
+
+To view the list of currently registered users, press the ‘R’ key and the system will print out the list of all users in the system. At a minimum this will consist of the system master and a guest user.
 
 [Image Goes Here]()
 
 Quit:
-To return to the terminal shell, press the ‘Q’ key and the system will terminate the
-Log-In subsystem. If no user was logged in, then the system will power down.
 
-5.5.2 User Menu
-To access the user menu subsystem, enter “user” from the shell and the
-following menu will appear.
+To return to the terminal shell, press the ‘Q’ key and the system will terminate the Log-In subsystem. If no user was logged in, then the system will power down.
 
-[Image Goes Here]()
+## 5.5.2 User Menu
 
-Change User Details:
-To change the user’s details, press the ‘C’ key and the following sub-menu will
-open.
+To access the user menu subsystem, enter “user” from the shell and the following menu will appear.
 
 [Image Goes Here]()
 
-Selecting ‘P’ or ‘U’ for either Password Change or Username Change
-respectively will require the user to re-enter their password to confirm it is a change they
-wish to make.
+**Change User Details:**
+
+To change the user’s details, press the ‘C’ key and the following sub-menu will open.
+
+[Image Goes Here]()
+
+Selecting ‘P’ or ‘U’ for either Password Change or Username Change respectively will require the user to re-enter their password to confirm it is a change they wish to make.
 
 [Image Goes Here]()
 
 Note: Passwords will NOT be shown as they are typed.
-After their password has been confirmed, if the user selects to change their
-password, the following prompt will appear.
+
+After their password has been confirmed, if the user selects to change their password, the following prompt will appear.
 
 [Image Goes Here]()
 
-Upon entering the new password and confirming the new password by
-re-entering it, the registry file will be updated to reflect the new password, and the
-following confirmation will be printed to the screen.
+Upon entering the new password and confirming the new password by re-entering it, the registry file will be updated to reflect the new password, and the following confirmation will be printed to the screen.
 
 If the user selects to change their username, the following prompts will appear.
 
 [Image Goes Here]()
 
-The user will be required to enter the new username and confirm it. Once the
-username has been confirmed, the user’s username will be set to the new username,
-and a confirmation message will be printed to the screen.
-If the username does not match between confirmations, the username will not be
-set and the user will be returned to the User Details menu.
+The user will be required to enter the new username and confirm it. Once the username has been confirmed, the user’s username will be set to the new username, and a confirmation message will be printed to the screen.
+
+If the username does not match between confirmations, the username will not be set and the user will be returned to the User Details menu.
 
 [Image Goes Here]()
 
-If the new password does not match between entries, an error will be reported to
-the user and they will be returned to the User Details menu.
+If the new password does not match between entries, an error will be reported to the user and they will be returned to the User Details menu.
 
 [Image Goes Here]()
 
-If the ‘A’ key is pressed for Access Permissions, the user will be required to enter
-the system master’s password.
+If the ‘A’ key is pressed for Access Permissions, the user will be required to enter the system master’s password.
 
 [Image Goes Here]()
 
-If entered correctly, the user will be able to elevate their privilege access to
-system-level through the following sub-menu. A ‘*’ will indicate which level of
-permissions the user currently has.
+If entered correctly, the user will be able to elevate their privilege access to system-level through the following sub-menu. A ‘\*’ will indicate which level of permissions the user currently has.
 
 [Image Goes Here]()
 
-Upon pressing the ‘S’ key for System Level Permissions, the following prompt will
-appear. Upon confirmation that the user understands the risks, they will be granted the
-same privileges as that of the system master. They will then be returned to the
-Permissions Menu.
+Upon pressing the ‘S’ key for System Level Permissions, the following prompt will appear. Upon confirmation that the user understands the risks, they will be granted the same privileges as that of the system master. They will then be returned to the Permissions Menu.
 
 [Image Goes Here]()
 
 [Image Goes Here]()
 
 Pressing the ‘B’ key will return the user to the User Details Menu.
-Logout:
-Pressing the ‘L’ key to select Logout will log the current user out of the system.
-This will display the following prompt, and return the user to the Shell as the system
-‘guest’ user.
+
+<ins>Logout:</ins>
+
+Pressing the ‘L’ key to select Logout will log the current user out of the system. This will display the following prompt, and return the user to the Shell as the system ‘guest’ user.
 
 [Image Goes Here]()
 
-Switch User:
-Pressing the ‘S’ key to select Switch User will allow the current user to log-out
-then immediately sign-in a new user. This process is the same as the ‘Existing User’
-command for the Log-In Menu. For more information on this process, please view the
-guide on using the Log-In Menu.
+<ins>Switch User:</ins>
+
+Pressing the ‘S’ key to select Switch User will allow the current user to log-out then immediately sign-in a new user. This process is the same as the ‘Existing User’ command for the Log-In Menu. For more information on this process, please view the guide on using the Log-In Menu.
 
 [Image Goes Here]()
 
-Quit:
-Pressing the ‘Q’ key to select Quit will return the user to the terminal shell. This
-will not logout the user.
+<ins>Quit:</ins>
+
+Pressing the ‘Q’ key to select Quit will return the user to the terminal shell. This will not logout the user.
 
 [Image Goes Here]()
 
 # 5.6 System Calls
+
 There are several system calls that PegasOS allows processes to use, which are compiled here for your convenience. These calls are split up into categories and organized alphabetically to make their function and usage easily identified, so that if modification of the system is necessary or a user wishes to make programs for the system, they understand what system calls will be best suited to the task. This list may be updated and revised as the need for additional system calls is met and dealt with.
 
 ## 5.6.1 System Diagnostics
+
 `*For the time being PegasOS will only support one clock, that being the
 hardware’s clock.`
 
