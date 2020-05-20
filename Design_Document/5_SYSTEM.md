@@ -32,34 +32,25 @@ keep the system as fast as possible.
 
 [Image Goes Here]()
 
-Boot
-This directory will contain all of the necessary files for boot-up, apart from
-those contained within the EEPROM already on the Raspberry Pi. This will
-primarily be made up of .elf files that set up the rest of the system for
-operation. This directory may contain other files or information related to
-the boot-up of the system.
-Drivers
-This directory will contain any hardware drivers that the system will use to
-interact with various pieces of hardware, such as keyboards, speakers,
-monitors, etc.
-Master
-This is the admin or system master’s directory, which will reflect that of a
-typical user’s directories. The key difference is that the system master will
-be able to add, modify, and remove files from any location on the system -
-essentially giving them kernel-level access, much like Linux’s root user.
-Prog
-This directory will contain all binaries for programs that can be executed
-by the system shell.
-Users
-This directory will contain a sub-directory for every user that is using the
-system. Each user directory will contain its own ‘documents’ and ‘desktop’
-directories, to offer the users some built-in categorization should they
-choose to use it. While there is no graphical interface, the ‘desktop’
-directory would be equivalent to the directory that is displayed on the main
-screen of the operating system.
+<dl>
+<dt>Boot</dt>
+This directory will contain all of the necessary files for boot-up, apart from those contained within the EEPROM already on the Raspberry Pi. This will primarily be made up of .elf files that set up the rest of the system for operation. This directory may contain other files or information related to the boot-up of the system.
 
-System
-: This directory will contain all binaries and data for system programs, calls, and services. Respectively, the binaries will be contained within the ‘bin’ subdirectory and all data will be contained within the ‘data’ subdirectory. Within the ‘data’ subdirectory, there will be three further subdirectories that further categorize the data contained within. The ‘users’ subdirectory will contain a user registry file for every user registered with the system. The ‘log’ subdirectory will contain all system logs and information that the system may need to refer to or record. The ‘locale’ subdirectory will contain all system localization files needed for translations of system dialogue.
+<dt>Drivers</dt>
+This directory will contain any hardware drivers that the system will use to interact with various pieces of hardware, such as keyboards, speakers, monitors, etc.
+
+<dt>Master</dt>
+This is the admin or system master’s directory, which will reflect that of a typical user’s directories. The key difference is that the system master will be able to add, modify, and remove files from any location on the system - essentially giving them kernel-level access, much like Linux’s root user.
+
+<dt>Prog</dt>
+This directory will contain all binaries for programs that can be executed by the system shell.
+
+<dt>Users</dt>
+This directory will contain a sub-directory for every user that is using the system. Each user directory will contain its own ‘documents’ and ‘desktop’ directories, to offer the users some built-in categorization should they choose to use it. While there is no graphical interface, the ‘desktop’ directory would be equivalent to the directory that is displayed on the main screen of the operating system.
+
+<dt>System</dt>
+<dd>This directory will contain all binaries and data for system programs, calls, and services. Respectively, the binaries will be contained within the ‘bin’ subdirectory and all data will be contained within the ‘data’ subdirectory. Within the ‘data’ subdirectory, there will be three further subdirectories that further categorize the data contained within. The ‘users’ subdirectory will contain a user registry file for every user registered with the system. The ‘log’ subdirectory will contain all system logs and information that the system may need to refer to or record. The ‘locale’ subdirectory will contain all system localization files needed for translations of system dialogue.</dd>
+</dl>
 
 [Image Goes Here]()
 
