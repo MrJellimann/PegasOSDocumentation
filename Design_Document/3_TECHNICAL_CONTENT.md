@@ -1,5 +1,7 @@
 # PegasOS - Technical Content
 
+![3 - Technical Content](images/3_Technical_Content/3_image1.png "3 - Technical Content")
+
 ## 3.1.1 Project Goal
 
 Our goal for this project is to create an operating system that can utilize the ARM 64-bit architecture that is native to the chip, since 32-bit systems are legacy support with the instruction set itself. Furthermore, we do not want this to be a fork of another operating system like many Linux distributions out there, but rather its own system. We want to create an operating system that has the essential programs that a user would need, plus some fun UCF-themed applications.
@@ -104,7 +106,7 @@ A PegasOS feature that will allow the user to change the display settings. The u
 
 ## 3.3.1 Design Overview
 
-[Picture goes here]()
+![PegasOS Design Overview](images/3_Technical_Content/3_image2.png "PegasOS Design Overview")
 
 ## 3.3.2 Cross Compiler
 
@@ -216,8 +218,6 @@ As the project matures and is released to the public for usage, there will be in
 As per the provisions granted under the GNU General Public License (version 3 and later), any individual or entity is allowed to download and modify the source code of PegasOS for their own personal usage. If they would like to submit their modifications as an official contribution to PegasOS, they may do so through the public GitHub page where they can apply to become a contributor to the project and have their submission reviewed by the team.
 
 If a user, individual, or group would like to fork the project and make their own modifications to their fork, they are free to do so under the provisions of the GNU General Public License, versions 3 and later. They may also use their fork of the project as a reference in applying to become an official contributor to the project.
-
-
 
 [Back - Legal, Ethical, and Technical](2_LEGAL_ETHICAL_TECHNICAL.md) | [Next - Hardware](4_HARDWARE.md) | 
 [Design Document Home](DESIGN_DOCUMENT.md) | [Documentation Home](../README.md)

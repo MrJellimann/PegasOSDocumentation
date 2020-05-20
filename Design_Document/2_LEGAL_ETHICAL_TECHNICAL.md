@@ -1,5 +1,7 @@
 # PegasOS - Legal, Ethical, and Technical
 
+![2 - Legal, Ethical, and Technical](images/2_Legal_Ethical_Technical/2_image1.png "2 - Legal, Ethical, and Technical")
+
 ## 2.1.1 Legal - Licensing
 
 PegasOS is planning on using the GNU General Public License, wherein any versions of the license including version 3 are applicable to the releases of PegasOS. This would allow us to monetize aspects of the operating system - such as allowing for donations to the project - but still, keep the goal of Free and Open Source Software front and center. This allows anyone to download the source code and/or operating system for free with no obligation to pay and allow them to make any modifications to said source code on their own behalf. Part of this licensing will require getting an agreement with UCF and CECS to disclaim the copyright on PegasOS, such that PegasOS remains free and open source. For your convenience, a copy of the GNU General Public License (version 3) is included in the Appendices section.
