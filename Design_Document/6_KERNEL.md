@@ -351,10 +351,26 @@ Source: https://wiki.osdev.org/Ext2
 
 Present in Major version if the version is 1 or greater. 
 
-| Starting Byte | Ending Byte | Size (in Bytes) | Meaning |
-| ------------- | ----------- | --------------- | ------- |
-| 84 | 87 | 4 | First non-reserved inode in the file system |
-| Finish | This | Table | Please |
+| Starting Byte | Ending Byte | Size (in Bytes) | Meaning                                                             |
+| ------------- | ----------- | --------------- | ------------------------------------------------------------------- |
+| 84            | 87          | 4               | First non-reserved inode in the file system                         |
+| 88            | 89          | 2               | Size of each inode structure                                        |
+| 90            | 91          | 2               | Block group that this superblock is part of (if backup copy)        |
+| 92            | 95          | 4               | Optional features present                                           |
+| 96            | 99          | 4               | Required features present                                           |
+| 100           | 103         | 4               | Feature that if not supported, the volume must be mounted read-only |
+| 104           | 119         | 16              | File system ID                                                      |
+| 120           | 135         | 16              | Volume name                                                         |
+| 136           | 199         | 64              | Path volume was last mounted                                        |
+| 200           | 203         | 4               | Compression algorithms used                                         |
+| 204           | 204         | 1               | Number of blocks to pre-allocate for files                          |
+| 205           | 205         | 1               | Number of blocks to pre-allocate for directories                    |
+| 206           | 207         | 2               | Unused                                                              |
+| 208           | 223         | 16              | Journal ID                                                          |
+| 224           | 227         | 4               | Journal inode                                                       |
+| 228           | 231         | 4               | Journal device                                                      |
+| 232           | 235         | 4               | Head of orphan inode                                                |
+| 236           | 1023        | x               | Unused                                                              |
 
 Source: https://wiki.osdev.org/Ext2
 
@@ -384,9 +400,29 @@ Each inode contains 12 direct pointers, one singly indirect pointer, one doubly 
 
 ## 6.5.6 Inode Data Structure
 
-| Starting Byte | Ending Byte | Size (in Bytes) | Meaning |
-| ------------- | ----------- | --------------- | ------- |
-| 0 | 1 | 2 | Type and permission |
+| Starting Byte | Ending Byte | Size (in Bytes) | Meaning                                                    |
+| ------------- | ----------- | --------------- | ---------------------------------------------------------- |
+| 0             | 1           | 2               | Type and permission                                        |
+| 2             | 3           | 2               | User ID                                                    |
+| 4             | 7           | 4               | Lower 32 bits of size in bytes                             |
+| 8             | 11          | 4               | Last access time                                           |
+| 12            | 15          | 4               | Creation time                                              |
+| 16            | 19          | 4               | Last modification time                                     |
+| 20            | 23          | 4               | Deletion time                                              |
+| 24            | 25          | 2               | Group ID                                                   |
+| 26            | 27          | 2               | Count of hard links to this inode                          |
+| 28            | 31          | 4               | Count of disk sectors in use by this inode                 |
+| 32            | 35          | 4               | Flags                                                      |
+| 36            | 39          | 4               | Operating system specific value                            |
+| 40            | 87          | 48              | Direct block pointers 0-11, each being the size of 4 bytes |
+| 88            | 91          | 4               | Singly indirect block pointer                              |
+| 92            | 95          | 4               | Doubly indirect block pointer                              |
+| 96            | 99          | 4               | Triply indirect block pointer                              |
+| 100           | 103         | 4               | Generation number                                          |
+| 104           | 107         | 4               | Reserved                                                   |
+| 108           | 111         | 4               | Reserved                                                   |
+| 112           | 115         | 4               | Block address of fragment                                  |
+| 116           | 127         | 12              | Operating system specific value                            |
 
 Source: https://wiki.osdev.org/Ext2
 
