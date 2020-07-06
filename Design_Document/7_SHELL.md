@@ -448,9 +448,9 @@ This command prints out all of the available colors for text in the shell termin
 ![Text Palette Command](images/7_image18.png "Text Palette Command")
 
 uninstall
-- This command will allow the user to delete any downloaded stuff to the Disk Space.
+> This command will allow the user to delete any downloaded stuff to the Disk Space.
 
-- Implementation: This command is pretty important for the reasons that PegasOS is at the moment CLI based.  The command does what the name entails, it simply uninstalls any downloaded content to the User’s PC so long as the contents aren’t key components to the OS.
+> Implementation: This command is pretty important for the reasons that PegasOS is at the moment CLI based.  The command does what the name entails, it simply uninstalls any downloaded content to the User’s PC so long as the contents aren’t key components to the OS.
 
 These commands were selected for the final cut for the initial design for the necessity for maneuvering through PegasOS and being able to use the Pi to its fullest potential. There will be more added after later versions of this Operating system when more applications are able to be done by the Pi. Also since the Pi keeps getting updates and newer versions, there will be more updates for PegasOS as well.
 
