@@ -18,13 +18,13 @@ The new name for this operating system is PegasOS, which bears some resemblance 
 
 For more information on the Pegasos MicroATX motherboards, please follow the following link(s).
 
-[](https://en.wikipedia.org/wiki/Pegasos)
+[https://en.wikipedia.org/wiki/Pegasos](https://en.wikipedia.org/wiki/Pegasos)
 
-[](https://genesi.company/products/pegasos)
+[https://genesi.company/products/pegasos](https://genesi.company/products/pegasos)
 
 For more information on the Pegasos Swiss Foundation, please follow the following link.
 
-[](https://pegasos-association.com/welcome/)
+[https://pegasos-association.com/welcome/](https://pegasos-association.com/welcome/)
 
 ## 9.1.3 GNU General Public License
         
@@ -253,24 +253,24 @@ END OF TERMS AND CONDITIONS
 All diagrams presented in this document that have not been accredited to an outside source have been made by the members of the PegasOS team with the free software, draw.io. Draw.io is licensed under the Apache 2.0 license, which can be found here at the draw.io GitHub page.
 
 
-[](https://github.com/jgraph/drawio/blob/master/LICENSE)
+[https://github.com/jgraph/drawio/blob/master/LICENSE](https://github.com/jgraph/drawio/blob/master/LICENSE)
 
 ## 9.2.2 Source Code and Documentation Repositories
 
 All source code is hosted on GitHub under public repositories. These repositories are free to clone from, download from, and modify private copies of under the GNU General Public License, versions 3 and later. If you would like to contribute to the repository itself and we have opened the repository to public contribution, please make your contribution request on the GitHub page for the source code, which can be found here:
 
-[](https://github.com/MrJellimann/PegasOS)
+[https://github.com/MrJellimann/PegasOS](https://github.com/MrJellimann/PegasOS)
 
 A copy of the documentation is also hosted on GitHub, with cross-links to the source code for PegasOS. If you would like to view this documentation on GitHub, please follow this link:
 
-[](https://github.com/MrJellimann/PegasOSDocumentation)
+[https://github.com/MrJellimann/PegasOSDocumentation](https://github.com/MrJellimann/PegasOSDocumentation)
 
 ## 9.2.3 Discord
 
 For meetings and discussions that were not held in person at UCF, we have used a Discord channel created specifically for our team. Discord is a free messaging software, with an optional paid service, primarily intended for gaming groups to use text and voice chat to communicate. It has since expanded to include features for more than just gaming groups, and includes many features typically seen in a forum. Recently, Discord has released fully-fledged screen-sharing and video chat, which allows us to use the software to host meetings amongst the team when we cannot otherwise meet in person. For more information on Discord and its services, please follow this link:
 
 
-[](https://discordapp.com/)
+[https://discordapp.com/](https://discordapp.com/)
 
 
 # 9.3 Miscellaneous
@@ -279,7 +279,7 @@ For meetings and discussions that were not held in person at UCF, we have used a
 
 For our 256-bit hashes, we will be using an implementation of SHA-256 based on the information and source code provided at the following link:
 
-[](https://www.movable-type.co.uk/scripts/sha256.html)
+[https://www.movable-type.co.uk/scripts/sha256.html](https://www.movable-type.co.uk/scripts/sha256.html)
 
 This is for two main reasons:
 
