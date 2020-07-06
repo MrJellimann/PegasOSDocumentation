@@ -415,42 +415,39 @@ This command will for the time being will display to the user all the usable mem
 
 Implementation: This command works kinda similar to TaskList and FileSpace where this command will display to the User the amount of available memory(RAM), the downloads that have been done since the last time being powered off, and the version number for PegasOS. There will be other features to be added in the future once more components are added to the OS. In later versions, this will be helpful in terms that it will display to the User if they are on the latest version of the OS.
 
-
-tail
-
+***tail***
 
 This command will display the last few contents of a given file.
-
 
 Implementation:This command will be very similar to that of Head. There will be an extra feature to Tail in that the User will be able to input an extra parameter which will be an integer value. This integer value will be used to grab n number of lines starting from the end of the file. The integer will be verified that it is between {1-(length of the file)}. If the integer given is greater than the file length then a warning will be given to the user yet it will display all the contents of the file. An error message will be given if the User inputs a value less than 1.
 
 ![Tail Command](images/7_Shell/7_image17.png "Tail Command")
 
-tasklist
-
+***tasklist***
 
 This command will display all the running tasks, their PID, and their memory consumption.
 
-
 Implementation: This command is quite important since we will be running a CLI compared to a GUI for PegasOS. Like described briefly above this will display all the running programs and executables in the background. The need for this is for when a certain program isn’t responding anymore as planned then there is the need to terminate it via PID or name. Another use for this command is to see the amount of memory that is being used per program. SInce the Pi is only running on 2-4GB of RAM it is imperative that we conserve the amount each program uses.
 
-
-terminatetask
+***terminatetask***
 
 This command will simply end the task via PID given as a parameter. This command works in conjunction with Tasklist since the user will need the PID from there for the parameter.
 
 Implementation: This command works in conjunction with TaskList since we need to find the name and PID for which the program needs to be terminated. Once caling this program with the corresponding PID/Name there will be a prompt asking if the User is sure about ending the program. A success message will be given when the program has been successfully terminated.
 
-textpalette
+***textpalette***
 
 This command prints out all of the available colors for text in the shell terminal.
 
 ![Text Palette Command](images/7_image18.png "Text Palette Command")
 
-uninstall
-> This command will allow the user to delete any downloaded stuff to the Disk Space.
+***uninstall***
 
-> Implementation: This command is pretty important for the reasons that PegasOS is at the moment CLI based.  The command does what the name entails, it simply uninstalls any downloaded content to the User’s PC so long as the contents aren’t key components to the OS.
+This command will allow the user to delete any downloaded stuff to the Disk Space.
+
+Implementation: This command is pretty important for the reasons that PegasOS is at the moment CLI based.  The command does what the name entails, it simply uninstalls any downloaded content to the User’s PC so long as the contents aren’t key components to the OS.
+
+---
 
 These commands were selected for the final cut for the initial design for the necessity for maneuvering through PegasOS and being able to use the Pi to its fullest potential. There will be more added after later versions of this Operating system when more applications are able to be done by the Pi. Also since the Pi keeps getting updates and newer versions, there will be more updates for PegasOS as well.
 
