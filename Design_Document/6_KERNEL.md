@@ -2,7 +2,7 @@
 
 ![6 - Kernel](images/6_Kernel/6_image1.png "6 - System")
 
-## 6.1 Kernel Design
+# 6.1 Kernel Design
 
 Overall, the kernel will have a straight-forward layout, made up of a few key components that will do the heavy lifting of the operating system, and the kernel will essentially be a ‘super-manager’ of these components. The main components are as follows: the Scheduler, Program Execution, File System, Memory Manager, and Input/Output Manager. The basic flow of connections between these components is demonstrated in the following diagram.
 
@@ -447,13 +447,21 @@ Source: https://wiki.osdev.org/Ext2
 When creating a file system, it must be considered what exactly it will be used for and what functions it will have. The file system is one of the core components of any operating system. While the main functions of a file system are to read a file, write/update the data in a file, and delete files, there are other practical features that go into a file system. Such practical features like:
 
 ● Assigning readable names to files and being able to rename them after they have been creating. While this does not make the file system any more efficient or change on how it functions, it is a practical and very common function for any file system that will be used by any person that will be using this operating system. This will make using the file system easier to use and manage data for the user.
+
 ● Allowing files to be divided into directories/folders. This is to have some sort of structure for the file system, this is the function that helps keep all the data in a storage device organized, not for the computer but for the user that will be using the operating system.
+
 ● Allowing a file to be read-only to prevent corruption of important data within the system.
+
 ● Buffering reading and writing to reduce the number of operations on the storage device.
+
 ● Providing some sort of security for the file system in order to prevent unauthorized access to the data within the files. Other features that are found in file systems but are not required for a practical file system:
+
 ● Automatic encryption - This is to allow the files to be encrypted to protect important data from attackers that have physical access to the computer.
+
 ● Journaling of read and write activity - Journaling is when a file system stores every change that was made within the file system. With this feature, it is faster to recover after a force system shutdown and it is less likely that the system or the files will become corrupted. Some of the file systems that have this feature are ext3, ext4, and ReiserFS. There are two methods of writing journals for the file system:
+
 ● Physical journals – These are journals that put every change that was ever made into the file system into the journal. This provides protection when a forced shutdown happens because the log can be read and rewrite data based on that and nothing will be lost. This can cause more  time to write to storage but it is a small price when having data protected from data loss or corruption.
+
 ● Logical journals – These kinds of journals write metadata every time the journal gets written to. This makes it faster to use than using the physical journaling method but there is an increased likelihood of the journal being corrupted. The system can still recover but cause the metadata and non-journaled data to be out of sync and this can cause the block to be corrupted.
 
 When organizing data with a file system there are different methods to it. With FAT32 and ext2 file systems, they both use different methods when indexing contents of files which makes them different on how they structure data within the storage. Such methods that are commonly used:
