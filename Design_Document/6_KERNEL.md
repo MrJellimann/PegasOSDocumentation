@@ -2,7 +2,7 @@
 
 ![6 - Kernel](images/6_Kernel/6_image1.png "6 - System")
 
-## 6.1 Kernel Design
+# 6.1 Kernel Design
 
 Overall, the kernel will have a straight-forward layout, made up of a few key components that will do the heavy lifting of the operating system, and the kernel will essentially be a ‘super-manager’ of these components. The main components are as follows: the Scheduler, Program Execution, File System, Memory Manager, and Input/Output Manager. The basic flow of connections between these components is demonstrated in the following diagram.
 
