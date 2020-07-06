@@ -437,15 +437,11 @@ Implementation: This command is quite important since we will be running a CLI c
 
 terminatetask
 
-
 This command will simply end the task via PID given as a parameter. This command works in conjunction with Tasklist since the user will need the PID from there for the parameter.
-
 
 Implementation: This command works in conjunction with TaskList since we need to find the name and PID for which the program needs to be terminated. Once caling this program with the corresponding PID/Name there will be a prompt asking if the User is sure about ending the program. A success message will be given when the program has been successfully terminated.
 
-
 textpalette
-
 
 This command prints out all of the available colors for text in the shell terminal.
 
@@ -453,130 +449,112 @@ This command prints out all of the available colors for text in the shell termin
 
 uninstall
 
+	This command will allow the user to delete any downloaded stuff to the Disk Space.
 
-This command will allow the user to delete any downloaded stuff to the Disk Space.
-
-
-Implementation: This command is pretty important for the reasons that PegasOS is at the moment CLI based.  The command does what the name entails, it simply uninstalls any downloaded content to the User’s PC so long as the contents aren’t key components to the OS.
-
+	Implementation: This command is pretty important for the reasons that PegasOS is at the moment CLI based.  The command does what the name entails, it simply uninstalls any downloaded content to the User’s PC so long as the contents aren’t key components to the OS.
 
 These commands were selected for the final cut for the initial design for the necessity for maneuvering through PegasOS and being able to use the Pi to its fullest potential. There will be more added after later versions of this Operating system when more applications are able to be done by the Pi. Also since the Pi keeps getting updates and newer versions, there will be more updates for PegasOS as well.
 
+# 7.3 Basic Shell Architecture
 
-
-7.3 Basic Shell Architecture
 Here we have the overall layout in which a shell will take in input(s) from the user and in which will then be parsed and bundled up with other executables, and once that is finished it is sent to the Program Execution cycle in the Kernel.
 
 ![Basic Shell Diagram](images/7_image19.png "Basic Shell Diagram")
 
-7.3.1 Lexical Analysis
+## 7.3.1 Lexical Analysis
+
 The Lexer will simply take in a input stream from some source ie. the user or some program and then will break up the input into a sequence of tokens. The lexer will look at each character and classify them to some token or a group of characters which will be a lexeme and then assign that lexeme its token. Such a token can be “add” for ‘+’ or “print” for ‘printf’ about C. A token is an object for which it represents the lexeme it was mapped to and these tokens can in turn have their classification: Number, Identifier, or Operator. Some tokens can have other attributes such as which row and column in which the token was seen in the code.
 
-
-The method in which the lexer can recognize the tokens from the input stream is by running based on some sort of predefined grammar. A lexical grammar is simply the rules in which a group of characters can be categorized and have more distinct character cases. One example, the “identifier” token can be represented by ‘(letter | _) (letter| digit| _)*’ So for the identifier token it is expecting a letter first followed by more characters or numbers until it sees a space which ends that instance for the token.If the lexer doesn't get the following characters to fulfill the following regular expression, then it will give an error message.
-
+The method in which the lexer can recognize the tokens from the input stream is by running based on some sort of predefined grammar. A lexical grammar is simply the rules in which a group of characters can be categorized and have more distinct character cases. One example, the “identifier” token can be represented by `(letter | _) (letter| digit| _)*` So for the identifier token it is expecting a letter first followed by more characters or numbers until it sees a space which ends that instance for the token.If the lexer doesn't get the following characters to fulfill the following regular expression, then it will give an error message.
 
 A regular expression is the small component of a grammar that holds the rules for one set of token aspects. Like a “Letter” regular expression can be in the form of [a-z,A-Z]. The overlying main concept for this to work is thanks to a concept of finite state automata/machines. These finite state machines are a graph/ control flow for characters to be interpreted by the lexer. It will have a set starting state where the first character would “enter” and then would continue along the path of accepting states so long as the next coming character is valid in the state machine. The characters will continue to flow in and make their way through the accepting states until they hit the terminating state which will give a success to the lexer and then create the token. If the current string never hits the terminating state then it will terminate it on its own and issue an error.When all of the input from the stream has been lexed and then tokenized it will be sent to the parser for further inspection.
 
+## 7.3.2 Parser
 
-7.3.2 Parser
 The Parser works very closely to the Lexer but not enough to be the same component overall. While the Lexer simply took the input stream and created tokens representing all the characters/strings read in, the job of the Parser is to look at each token and make sure they follow the Grammar set so that the token makes a working error-free program. The overall concept for the Parser is that it reads a token and it will verify that the following tokens are valid and fit for the current section of the Grammar. The following Grammar representation below is something similar to what grammar we will be following when Parsing the incoming inputs.
 
 ![Parser Syntax](images/7_Shell/7_image20.png "Parser Syntax")
 
 One thing to clarify and explain is the idea and usage of a Grammar and how it is represented. The image above this represents a very similar grammar that was used in the Lexer to create the tokens. The only difference is that we only used a fraction of the presented grammar since all we are looking for are the commands and the files and other associated parameters for that given command. So in cases where we read in the tail command, we would be expecting a file as a parameter rather than say a path to a directory.
 
-
-
-7.3.3 Shell Architecture for PegasOS
+## 7.3.3 Shell Architecture for PegasOS
 
 ![PegasOS Shell Architecture](images/7_Shell/7_image21.png "PegasOS Shell Architecture")
 
 Once all the booting has been completed and the kernel has done the system check, the kernel will then call the shell to be executed. The shell will be running until the user inputs a command with parameters if needed. Once the input has been read in it will be sent to be tokenized via Lexer/Parser. It will tokenize the command and then the following parameters for the given command. Once the tokenizing has been completed, we add them to a stack or queue like data structure and pop the first token which is the command token.
 
-
 We first compare it to the command keyword “Power” and if the token matches the keyword it will then send an alert to the Kernel which will then shut the Pi off. The other case is that the keyword isn't the same then we send the token to be compared to the command file names in our directory. If there is a file that matches our command, then we progress to send the parameters and the file path to the ProgramExecution Block which will be bundled up and sent to the Scheduler to be executed by the CPU. If a file cannot be found for the command given or it fails when the CPU tries to execute the command then it will display an error to the screen and then wait for another input from the user. The same happens when the CPU runs the command and is successful in doing so since it will display the result to the screen and then wait for the next input from the user.
 
-
-7.3.4 Process Flow
+## 7.3.4 Process Flow
 
 ![Process Flow Block Diagram](images/7_Shell/7_image22.png "Process Flow Block Diagram")
 
 Here we have the Process Flow block diagram that will come from the Shell execution path and will then enter the ProgramExecution once we find the associated command file for the command entered through by the user. From here we send those components to the “Bundle into ProcessBlock” block. In this block, we create a struct that will contain the command file, the parameters, the pc clock in which the CPU will return to once completed, and other necessary information for which the CPU will need for execution. Once all this is complete we send it to the scheduler which will do its job and send it to the CPU to be executed. It will continue to send it to the CPU until it completes it and once the task is done it will send back either a success or failure to the user.
 
-7.3.5 Process Flow for Shell
-Before going into full detail of how the shell will be operated and completed, there is one step that will be explained first. In the Linux operating system, the format in which each command is done is quite unique and actually intuitive for its purpose. When a user inputs a command and its parameters, the shell of Linux takes that command inputted and then goes into a sub-directory folder where the shell file is and looks for a file that matches the command given. Once the file has been found, it then sends the parameters given by the user as inputs for the matched file.
+## 7.3.5 Process Flow for Shell
 
+Before going into full detail of how the shell will be operated and completed, there is one step that will be explained first. In the Linux operating system, the format in which each command is done is quite unique and actually intuitive for its purpose. When a user inputs a command and its parameters, the shell of Linux takes that command inputted and then goes into a sub-directory folder where the shell file is and looks for a file that matches the command given. Once the file has been found, it then sends the parameters given by the user as inputs for the matched file.
 
 The reason for explaining this is the fact that we are using this format for executing each and every command that a user can use in PegasOS. The main reason we wanted to implement this is that it will allow for easier updates for the OS when adding new commands since the shell should work for every command once launched. Of course, there would be instances that we will need to change things in the main shell file.
 
-
 Once the kernel has completed all the systems checks for each component and every driver, the kernel will then launch the shell to start to run. The program file running the shell will begin, first it will create all the structs and macro variables needed to perform all the necessary actions. Such macro variables will be:
 
+```
+#define INPUT_BUFFER_SIZE=256;
 
-        #define INPUT_BUFFER_SIZE=256;
-
-        #define PAST_COMMANDS_BUFFER=100;
-
+#define PAST_COMMANDS_BUFFER=100;
+```
 
 The macro variable INPUT_BUFFER_SIZE has the value 256 for it holds the input string that the User inputted for a command to be completed. The value of 256 is used for the length of the char array. We used 256 for it is the standard length for input strings.
 
-
 The macro variable PAST_COMMANDS_BUFFER is used to set the max length for the Struct List which is a Linked list. This list is used to hold all the previously inputted commands the User has done.
 
+Structs that will be needed are:
 
-        Structs that will be needed are:
+```
+Typedef struct token{
+
+        Char input [INPUT_BUFFER_SIZE];
+
+        Struct Token *parent;
+
+        Struct Token* next;
+
+} Token;
 
 
-        Typedef struct token{
+Typedef struct List{
 
-                Char input [INPUT_BUFFER_SIZE];
+        Token* head;
 
-                Struct Token *parent;
+        Token* tail;
 
-                Struct Token* next;
-
-        } Token;
-
-
-        Typedef struct List{
-
-                Token* head;
-
-                Token* tail;
-
-        } List;
-
-                
+} List;
+```
 
 The usage of the struct Token is very important. The struct itself holds a character array of length 256 and a pointer to another Token called next. The character array simply holds the inputted string from the User. We hold the entirety of the string here and then later “tokenize” the string so we are able to separate the commands and the parameters. The pointer to the Token called Next will simply point to the next token in line, in this case, it would point to the token that is created after it. The pointer to the Token called parent is very important for being able to traverse back up the list.
 
-
 The main reason we needed to add this component to the struct is that when the User is scrolling back up to view the previous inputted commands it would be easier and more time-efficient for the child node to be able to “look” back up to the parent pointer. Like mentioned, having this pointer is way more time-efficient since we would only have to do one line of code, while if we didn't have that pointer we would have to go to the head of the list and then traverse down till we find the parent Token. Doing that would be completely time inefficient since the length of the List could be arbitrarily long at some instances which would then slow down the usage of the OS when simply doing a simple scroll up operation.
-
 
 The usage of the struct List is pretty straightforward. It has the same structure of a linked list that has a pointer to the beginning of the list, head, and also a pointer to the end of the list, tail. The majority of the time we will be inserting token pointers to the end of the list so that way they are in order from first to last. Having a tail token pointer is very useful because it will make the insertion to the tail a lot easier and faster since we won't have to start from the head and traverse our way to the end. The head Token pointer is needed for instances in which we need to maneuver through the list from the beginning.
 
-        
-
 Once these essential variables and structs have been defined, we move on to defining vital functions that will be needed to do certain operations to prep the incoming strings that will be sent off to a different file to which matches the corresponding command given by the User. As described earlier through the Shell Layout Diagram, if the shell program is unable to find any corresponding file that matches the command given, then an error message will be displayed to the User thus asking them to enter their previous input but to put the correct command.
 
+Such functions that we’ll be using in the main shell program are:
 
-        Such functions that we’ll be using in the main shell program are:
+```
+int getCommand();
 
+void sendToCommandFile();
 
-        Int getCommand();
+void scroll();
 
-        Void sendToCommandFile();
+List* createList();
 
-        Void scroll();
+Token* createToken();
+```
 
-        List* createList();
-
-        Token* createToken();
-        
-
-        For the function, getCommand(), will take a Pointer to a token and return an integer value. Once entering the function, we will copy the character array to a local array in the function to keep the integrity of the original array so no changes can be made to it by mistake. Once copied successfully, we will run through a giant string compare if-else statements to find a matching if statement to the command found in the array. Once an equivalent string compare was found, we enter the corresponding if statement which will then return a certain integer which will correspond to that command. If no string compare equivalent is found, then the function will default and return a 0.
+For the function, getCommand(), will take a Pointer to a token and return an integer value. Once entering the function, we will copy the character array to a local array in the function to keep the integrity of the original array so no changes can be made to it by mistake. Once copied successfully, we will run through a giant string compare if-else statements to find a matching if statement to the command found in the array. Once an equivalent string compare was found, we enter the corresponding if statement which will then return a certain integer which will correspond to that command. If no string compare equivalent is found, then the function will default and return a 0.
 
 The following table will show all the corresponding integer return values to each of their commands:
 
@@ -615,7 +593,7 @@ For the function createToken(), it will simply allocate memory and create a new 
 
 Once all of these functions are set and defined, we enter the int main() function. In this, we will create variables and structs then enter a while loop that will only ever end when either the power is turned off or the command power is given by the User. In the loop, the previously mentioned algorithm will be running by getting input from the User and then sending it off to the corresponding command name file.
 
-## 7.4 Shell Interactions with Kernel
+# 7.4 Shell Interactions with Kernel
 
 The way the Shell interacts with the Kernel is mostly through system calls and software interrupts that have been clarified previously in the System Calls section in this document. In this case, the system calls will be the majority of the commands stored in the file that each command represents. There will be calls to check if certain files, directories, or drivers, etc. are present before the rest of the code in the file can execute.
 
