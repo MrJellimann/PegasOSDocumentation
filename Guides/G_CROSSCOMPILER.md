@@ -13,9 +13,11 @@ Go to:
     https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-a/downloads
 
 And download the appropriate (aarch64-none-elf) compiler FOR YOUR CPU: 
+
     Modern Intel/AMD CPU running Linux -> gcc-arm-9.2-2019.12-x86_64-aarch64-none-elf.tar.xz
 
 If you are compiling this on an ARM cpu (such as a windows tablet), try this one instead: 
+
     ARM64 CPU running Linux -> gcc-arm-9.2-2019.12-aarch64-aarch64-none-elf.tar.xz
 
 ### Step 2.
@@ -47,7 +49,8 @@ Sample: `nano ~/.profile`
 
 ### Step 9.
 At the bottom of the file, add a line that says:
-		`export PATH="$HOME/opt/bin:$PATH"`
+
+	export PATH="$HOME/opt/bin:$PATH"
 
 (Note: you may substitute this with a custom directory if you did that for Step 4)
 
@@ -62,9 +65,12 @@ Reopen your WSL Distro.
 ### Step 12.
 
 To confirm the path variable works correctly, type:
-		`aarch64-none-elf-gcc -v`
+
+	aarch64-none-elf-gcc -v
+
 or
-		`aarch64-none-elf-gcc --version`
+
+	aarch64-none-elf-gcc --version
 
 ### Step 13.
 If you see a copyright message, you've done it!
@@ -73,11 +79,13 @@ If you see a copyright message, you've done it!
 If the path is correct but it can't find the file, make sure that the binaries have read and execute permissions.
 
 To check what the permissions of your files are, navigate to their directory and enter the following command:
+
     ls -la
 
 If your binaries do not have `-rwxr-xr-x` permissions, even if the path variables are pointing to the correct location, the user will not be able to access the binaries because they don't have the `x` or execute permissions. The `r` or read permissions are not as important, though still recommended. What's important to look at is the last six characters of the permissions, which dictate the group permissions and other user permissions (other than the file owner, which is the first triplet of characters.
 
 To change the permissions on these files, navigate to your `opt/bin/` directory and enter in the following command:
+
     chmod -R 755 ./
 
 Now, you **MUST** be careful with this command. The `-R` tag is for *recursive* which means it will do this for every file in the current directory. Depending on where or how you call this command, you may accidentally change the permissions for *every single file on your Linux system*. Navigating to the `opt/bin/` directory (or wherever you put the compiler binaries) will act as the root of the recursion, and it will recursively modify the permissions for everything below it.
