@@ -4,6 +4,8 @@ At a later date there will also be a YouTube video going through these steps. In
 
 **Navigation**
 
+[Part 1 - Installing the Cross-Compiler for AArch64](##===-Part-1---Installing-the-Cross-Compiler-for-AArch64-===)
+
 [Back to Guides Home](GUIDES_HOME.md)
 
 ---
@@ -12,7 +14,7 @@ To cross-compile Circle on Linux, do the following:
 
 Here, we will be doing this from Windows 10 running WSL on Debian (the steps are the same for Ubuntu).
 
-## === Part 1 - Installing the Cross-Compiler for AArch64 ===
+(##===-Part-1---Installing-the-Cross-Compiler-for-AArch64-===)
 
 ### Step 1.
 Go to: 
@@ -193,4 +195,6 @@ Plug in your Pi and boot
 ### Step 38.
 If you see text about Circle or PegasOS, you've done it!
 
-(Back to Guides Home)[GUIDES_HOME.md]
+**Navigation**
+
+[Back to Guides Home](GUIDES_HOME.md)
