@@ -9,60 +9,78 @@ Here, we will be doing this from Windows 10 running WSL on Debian (the steps are
 ## === Part 1 - Installing the Cross-Compiler for AArch64 ===
 
 ### Step 1.
-	Go to: 
-		https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-a/downloads
-	
-    And download the appropriate (aarch64-none-elf) compiler FOR YOUR CPU: 
-		Modern Intel/AMD CPU running Linux -> gcc-arm-9.2-2019.12-x86_64-aarch64-none-elf.tar.xz
-	
-    If you are compiling this on an ARM cpu (such as a windows tablet), try this one instead: 
-		ARM64 CPU running Linux -> gcc-arm-9.2-2019.12-aarch64-aarch64-none-elf.tar.xz
+Go to: 
+    https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-a/downloads
+
+And download the appropriate (aarch64-none-elf) compiler FOR YOUR CPU: 
+    Modern Intel/AMD CPU running Linux -> gcc-arm-9.2-2019.12-x86_64-aarch64-none-elf.tar.xz
+
+If you are compiling this on an ARM cpu (such as a windows tablet), try this one instead: 
+    ARM64 CPU running Linux -> gcc-arm-9.2-2019.12-aarch64-aarch64-none-elf.tar.xz
 
 ### Step 2.
-	Extract the contents to a new folder.
+Extract the contents to a new folder.
 
 ### Step 3.
-	Open your WSL Distro (in my case, Debian).
+Open your WSL Distro (in my case, Debian).
 
 ### Step 4.
-	Create a directory called /opt
-	(Note: the directory name doesn't matter, but being consistent does)
+Create a directory called /opt
 
-Step 5.
-	Open the folder in windows with `explorer.exe .`
+(Note: the directory name doesn't matter, but being consistent does)
 
-Step 6.
-	Open the folder you extracted the compiler to.
+### Step 5.
+Open the folder in windows with `explorer.exe .`
 
-Step 7.
-	Copy the folders within the compiler's folder into /opt.
-	These folders are called 'aarch64-none-elf', 'bin', 'include', 'lib', 'libexec', 'share'
+### Step 6.
+Open the folder you extracted the compiler to.
 
-Step 8.
-	After the folders have copied over, open the .profile file for your user in your text editor.
-	Sample: `nano ~/.profile`
+### Step 7.
+Copy the folders within the compiler's folder into /opt.
 
-Step 9.
-	At the bottom of the file, add a line that says:
+These folders are called 'aarch64-none-elf', 'bin', 'include', 'lib', 'libexec', 'share'
+
+### Step 8.
+After the folders have copied over, open the .profile file for your user in your text editor.
+
+Sample: `nano ~/.profile`
+
+### Step 9.
+At the bottom of the file, add a line that says:
 		`export PATH="$HOME/opt/bin:$PATH"`
-		(Note: you may substitute this with a custom directory if you did that for Step 4)
 
-Step 10.
-	Restart your computer for the path changes to take effect.
+(Note: you may substitute this with a custom directory if you did that for Step 4)
 
-Step 11.
-	Reopen your WSL Distro.
+### Step 10.
+Restart your computer for the path changes to take effect.
 
-Step 12.
-	To confirm the path variable works correctly, type:
+(This is the easiest method. There are other ways to reset your environment variables.)
+
+### Step 11.
+Reopen your WSL Distro.
+
+### Step 12.
+
+To confirm the path variable works correctly, type:
 		`aarch64-none-elf-gcc -v`
-		or
+or
 		`aarch64-none-elf-gcc --version`
 
-Step 13.
-	If you see a copyright message, you've done it!
+### Step 13.
+If you see a copyright message, you've done it!
 
-If the path is correct but it can't find the file, make sure that the binaries have read and execute permissions
+### Notes/Troubleshooting
+If the path is correct but it can't find the file, make sure that the binaries have read and execute permissions.
+
+To check what the permissions of your files are, navigate to their directory and enter the following command:
+    ls -la
+
+If your binaries do not have `-rwxr-xr-x` permissions, even if the path variables are pointing to the correct location, the user will not be able to access the binaries because they don't have the `x` or execute permissions. The `r` or read permissions are not as important, though still recommended. What's important to look at is the last six characters of the permissions, which dictate the group permissions and other user permissions (other than the file owner, which is the first triplet of characters.
+
+To change the permissions on these files, navigate to your `opt/bin/` directory and enter in the following command:
+    chmod -R 755 ./
+
+Now, you **MUST** be careful with this command. The `-R` tag is for *recursive* which means it will do this for every file in the current directory. Depending on where or how you call this command, you may accidentally change the permissions for *every single file on your Linux system*. Navigating to the `opt/bin/` directory (or wherever you put the compiler binaries) will act as the root of the recursion, and it will recursively modify the permissions for everything below it.
 
 === Part 2 - Compiling the Libraries ===
 Step 14.
