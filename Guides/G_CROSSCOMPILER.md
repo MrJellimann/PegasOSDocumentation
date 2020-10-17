@@ -14,7 +14,8 @@ To cross-compile Circle on Linux, do the following:
 
 Here, we will be doing this from Windows 10 running WSL on Debian (the steps are the same for Ubuntu).
 
-## === Part 1 - Installing the Cross-Compiler for AArch64 === (#part-1)
+## === Part 1 - Installing the Cross-Compiler for AArch64 ===
+(#part-1)
 
 ### Step 1.
 Go to: 
