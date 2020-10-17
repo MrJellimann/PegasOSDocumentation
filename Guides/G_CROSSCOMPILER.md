@@ -4,7 +4,7 @@ At a later date there will also be a YouTube video going through these steps. In
 
 **Navigation**
 
-(Back to Guides Home)[GUIDES_HOME.md]
+[Back to Guides Home](GUIDES_HOME.md)
 
 ---
 
