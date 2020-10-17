@@ -5,8 +5,11 @@ At a later date there will also be a YouTube video going through these steps. In
 **Navigation**
 
 [Part 1 - Installing the Cross-Compiler for AArch64](#part-1)
+
 [Part 2 - Compiling the Libraries](#part-2)
+
 [Part 3 - Compiling the Kernel](#part-3)
+
 [Part 4 - Move files onto RPi Micro SD and Boot](#part-4)
 
 [Back to Guides Home](GUIDES_HOME.md)
@@ -202,6 +205,16 @@ Plug in your Pi and boot
 ### Step 38.
 If you see text about Circle or PegasOS, you've done it!
 
+---
+
 **Navigation**
+
+[Part 1 - Installing the Cross-Compiler for AArch64](#part-1)
+
+[Part 2 - Compiling the Libraries](#part-2)
+
+[Part 3 - Compiling the Kernel](#part-3)
+
+[Part 4 - Move files onto RPi Micro SD and Boot](#part-4)
 
 [Back to Guides Home](GUIDES_HOME.md)

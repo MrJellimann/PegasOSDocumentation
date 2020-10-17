@@ -7,7 +7,7 @@ The source code for this OS is [here.](https://github.com/MrJellimann/PegasOS)
 
 ======
 
-Navigation
+**Navigation**
 
 [PegasOS Files](Files/)
 
