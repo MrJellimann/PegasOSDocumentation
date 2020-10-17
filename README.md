@@ -11,7 +11,7 @@ Navigation
 
 [PegasOS Files](Files/)
 
-[PegasOS Guides](Guides/)
+[PegasOS Guides](Guides/GUIDES_HOME.md)
 
 [Spring 2020 - Design Document](Design_Document/DESIGN_DOCUMENT.md)
 
