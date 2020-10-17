@@ -5,6 +5,9 @@ At a later date there will also be a YouTube video going through these steps. In
 **Navigation**
 
 [Part 1 - Installing the Cross-Compiler for AArch64](#part-1)
+[Part 2 - Compiling the Libraries](#part-2)
+[Part 3 - Compiling the Kernel](#part-3)
+[Part 4 - Move files onto RPi Micro SD and Boot](#part-4)
 
 [Back to Guides Home](GUIDES_HOME.md)
 
@@ -99,7 +102,8 @@ To change the permissions on these files, navigate to your `opt/bin/` directory 
 
 Now, you **MUST** be careful with this command. The `-R` tag is for *recursive* which means it will do this for every file in the current directory. Depending on where or how you call this command, you may accidentally change the permissions for *every single file on your Linux system*. Navigating to the `opt/bin/` directory (or wherever you put the compiler binaries) will act as the root of the recursion, and it will recursively modify the permissions for everything below it.
 
-## === Part 2 - Compiling the Libraries ===
+# Part 2
+## Compiling the Libraries
 
 ### Step 14.
 For Circle on its own, clone the Circle Repository:
@@ -155,7 +159,8 @@ Move into the `/lib/pegasos/` directory
 ### Step 29.
 You've compiled the Circle library! (at least the important stuff)
 
-## === Part 3 - Compiling the Sample Kernel ===
+# Part 3
+## Compiling the Kernel
 
 ### Step 30 (Circle Compile).
 Move into the desired sample folder. For this example, the usbkeyboard folder:
@@ -170,7 +175,8 @@ Move into the desired sample folder. For this example, the usbkeyboard folder:
 ### Step 33.
 If you see a 'kernel8-rpi4.img' file, you've done it!
 
-## === Part 4 - Move files onto RPi Micro SD and Boot ===
+# Part 4
+## Move files onto RPi Micro SD and Boot
 
 ### Step 31.
 Insert your Micro SD card into your Micro SD card reader/adapter and into your PC
