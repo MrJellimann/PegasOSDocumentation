@@ -2,6 +2,12 @@
 
 At a later date there will also be a YouTube video going through these steps. In the meantime, if there are any particular questions about this process just make an Issue in the PegasOSDocumentation repository (where you are now) and we'll get back to you!
 
+**Navigation**
+
+(Back to Guides Home)[GUIDES_HOME.md]
+
+---
+
 To cross-compile Circle on Linux, do the following:
 
 Here, we will be doing this from Windows 10 running WSL on Debian (the steps are the same for Ubuntu).
@@ -90,84 +96,101 @@ To change the permissions on these files, navigate to your `opt/bin/` directory 
 
 Now, you **MUST** be careful with this command. The `-R` tag is for *recursive* which means it will do this for every file in the current directory. Depending on where or how you call this command, you may accidentally change the permissions for *every single file on your Linux system*. Navigating to the `opt/bin/` directory (or wherever you put the compiler binaries) will act as the root of the recursion, and it will recursively modify the permissions for everything below it.
 
-=== Part 2 - Compiling the Libraries ===
-Step 14.
-	Clone the Circle project
-		https://github.com/rsta2/circle
+## === Part 2 - Compiling the Libraries ===
 
-Step 15.
-	Move into the /circle/lib directory of the repository
+### Step 14.
+For Circle on its own, clone the Circle Repository:
 
-Step 16.
-	`make` the /lib folder
+	https://github.com/rsta2/circle
 
-Step 17.
-	Move into the /circle/lib/usb directory
+For PegasOS, clone the PegasOS Repository:
 
-Step 18.
-	`make` the /lib/usb folder
+    https://github.com/mrjellimann/PegasOS
 
-Step 19.
-	Move into the /circle/lib/input directory
+### Step 15.
+Move into the `/circle/lib` directory of the repository
 
-Step 20.
-	`make` the /lib/input folder
+### Step 16.
+`make` the `/lib` folder
 
-Step 21.
-	Move into the /circle/lib/fs directory
+### Step 17.
+Move into the `/circle/lib/usb` directory
 
-Step 22.
-	`make` the /lib/fs folder
+### Step 18.
+`make` the `/lib/usb` folder
 
-Step 23.
-	Move into the /circle/lib/fs/fat directory
+### Step 19.
+Move into the `/circle/lib/input` directory
 
-Step 24.
-	`make` the /lib/fs/fat folder
+### Step 20.
+`make` the `/lib/input` folder
 
-Step 25.
-	Move into the /circle/lib/sched directory
+### Step 21.
+Move into the `/circle/lib/fs` directory
 
-Step 26.
-	`make` the /lib/sched folder
+### Step 22.
+`make` the `/lib/fs` folder
 
-Step 27.
-	You've compiled the Circle library! (at least the important stuff)
+### Step 23.
+Move into the `/circle/lib/fs/fat` directory
 
-=== Part 3 - Compiling the Sample Kernel ===
-Step 28.
-	Move into the desired sample folder. In this case, the usbkeyboard folder
+### Step 24.
+`make` the `/lib/fs/fat` folder
+
+### Step 25.
+Move into the `/circle/lib/sched` directory
+
+### Step 26.
+`make` the `/lib/sched` folder
+
+### Step 27 (PegasOS Compile).
+Move into the `/lib/pegasos/` directory
+
+### Step 28 (PegasOS Compile).
+`make` the `/lib/pegasos` folder
+
+### Step 29.
+You've compiled the Circle library! (at least the important stuff)
+
+## === Part 3 - Compiling the Sample Kernel ===
+
+### Step 30 (Circle Compile).
+Move into the desired sample folder. For this example, the usbkeyboard folder:
+
 	/circle/sample/08-usbkeyboard
 
-Step 29.
-	`make` the desired folder
+### Step 31 (PegasOS Compile).
 
-Step 30.
-	If you see a 'kernel8-rpi4.img' file, you've done it!
+### Step 32.
+`make` the desired folder
 
-=== Part 4 - Move files onto RPi Micro SD and Boot ===
-Step 31.
-	Insert your Micro SD card into your Micro SD card reader/adapter and into your PC
+### Step 33.
+If you see a 'kernel8-rpi4.img' file, you've done it!
 
-Step 32.
-	Make sure that your Micro SD card is formatted for FAT file system
+## === Part 4 - Move files onto RPi Micro SD and Boot ===
 
-Step 33.
-	Copy the files from /circle/boot onto your Micro SD card
+### Step 31.
+Insert your Micro SD card into your Micro SD card reader/adapter and into your PC
 
-Step 34.
-	Copy the kernel image from Step 29 onto your Micro SD card
+### Step 32.
+Make sure that your Micro SD card is formatted for FAT file system
 
-Step 35.
-	Make sure that the 'config.txt' file is present on the Micro SD card for 64-bit boot
+### Step 33.
+Copy the files from `/circle/boot` onto your Micro SD card
 
-Step 36.
-	Now remove your Micro SD card and reinsert it into your RPi
+### Step 34.
+Copy the kernel image from Step 29 onto your Micro SD card
 
-Step 37.
-	Plug in your Pi and boot
+### Step 35.
+Make sure that the 'config.txt' file is present on the Micro SD card for 64-bit boot
 
-Step 38.
-	If you see text about Circle, you've done it!
+### Step 36.
+Now remove your Micro SD card and reinsert it into your RPi
+
+### Step 37.
+Plug in your Pi and boot
+
+### Step 38.
+If you see text about Circle or PegasOS, you've done it!
 
 (Back to Guides Home)[GUIDES_HOME.md]
