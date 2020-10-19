@@ -9,7 +9,7 @@ The source code for this OS is [here.](https://github.com/MrJellimann/PegasOS)
 
 **Navigation**
 
-[PegasOS Files](Files/)
+[PegasOS Files](Files/PEGASOS_FILES.md)
 
 [PegasOS Guides](Guides/GUIDES_HOME.md)
 
