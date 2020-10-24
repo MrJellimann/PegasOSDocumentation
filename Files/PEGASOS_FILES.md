@@ -6,7 +6,7 @@ For your convenience, some quick links to the available files are included below
 
 [Circle x PegasOS Dependencies v1.0.0](Circle_PegasOS_Dependencies_v1.0.0.pdf)
 
-[PegasOS Final Design Document (Spring 2020)](PegasOS_FinalDesignDoc.pdf)
+[PegasOS Final Design Document (Spring 2020)](PegasOS_FinalDesignDoc_Spring2020.pdf)
 
 [PegasOS Code Standard v1.1.1](CodeStandard_PegasOSv1_1_1.pdf)
 
