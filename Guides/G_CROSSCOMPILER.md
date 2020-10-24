@@ -117,8 +117,13 @@ For PegasOS, clone the PegasOS Repository:
 
     https://github.com/mrjellimann/PegasOS
 
-### Step 15.
-Move into the `/circle/lib` directory of the repository
+### Step 15 (Circle)
+The `makeall` file included with Circle in Release 42 has some errors, which means you'll need to compile it manually. To do that:
+
+Move into the `/circle/lib` directory of the repository. Go to [Step 16](###step-16).
+
+### Step 15 (PegasOS)
+We have included a `makefile` in the root directory of the PegasOS repository to make compiling Circle and PegasOS a lot more convenient. Simply navigate to the root and enter `make`. If for whatever reason this doesn't work, or you just like creating work for yourself, follow the steps from Step 15 (Circle). Otherwise, you can skip down to [Part 4](#part-4).
 
 ### Step 16.
 `make` the `/lib` folder
