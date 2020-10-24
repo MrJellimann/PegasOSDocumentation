@@ -6,7 +6,7 @@ This directory contains the final design document from Senior Design I, Spring 2
 
 The most up-to-date information will always be kept in the home directory of this repository, and will more accurately reflect the OS in its current state.
 
-For your convenience, the final design document has been converted into text pages you can view on your browser. You may also [download the final design document that was submitted as a .pdf](../Files/PegasOS_FinalDesignDoc_Spring2020.pdf), which is included in this directory.
+For your convenience, the final design document has been converted into text pages you can view on your browser. You may also [download the final design document that was submitted as a .pdf](../Files/PegasOS_FinalDesignDoc_Spring2020.pdf).
 
 ## PegasOS
 
