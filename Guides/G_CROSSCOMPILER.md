@@ -176,6 +176,9 @@ Move into the desired sample folder. For this example, the usbkeyboard folder:
 	/circle/sample/08-usbkeyboard
 
 ### Step 31 (PegasOS Compile).
+Move into the kernel folder:
+
+    /<repo-root>/sample/00-pegasos/
 
 ### Step 32.
 `make` the desired folder
