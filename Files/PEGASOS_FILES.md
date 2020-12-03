@@ -20,4 +20,6 @@ For your convenience, some quick links to the available files are included below
 
 [PegasOS Code Standard v1.0.0](CodeStandard_PegasOSv1_0_0.pdf)
 
+[(UNUSED) PegasOS Test Plan v1.0.0](PegasOS_Test_Planv1_0_0.pdf)
+
 [Back to Documentation Home](../README.md)
