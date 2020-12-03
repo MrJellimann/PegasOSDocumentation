@@ -203,6 +203,9 @@ Copy the files from `/circle/boot` onto your Micro SD card
 ### Step 34.
 Copy the kernel image from Step 29 onto your Micro SD card
 
+### Step 34 A (Optional)
+You may also wish to copy over the 'kernel8-rpi4.elf' file to your SD card as well
+
 ### Step 35.
 Make sure that the 'config.txt' file is present on the Micro SD card for 64-bit boot
 
