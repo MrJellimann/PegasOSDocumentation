@@ -1,6 +1,8 @@
 # How To Set Up the Arm Cross-Compiler
 
-At a later date there will also be a YouTube video going through these steps. In the meantime, if there are any particular questions about this process just make an Issue in the PegasOSDocumentation repository (where you are now) and we'll get back to you!
+~~At a later date there will also be a YouTube video going through these steps. In the meantime, if there are any particular questions about this process just make an Issue in the PegasOSDocumentation repository (where you are now) and we'll get back to you!~~ 
+
+The video guide is no longer being produced. If you have issues following the written guide here, please make an Issue and we will get back to you ASAP.
 
 **Navigation**
 
