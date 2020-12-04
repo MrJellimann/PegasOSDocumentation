@@ -13,6 +13,8 @@ The source code for this OS is [here.](https://github.com/MrJellimann/PegasOS)
 
 [PegasOS Guides](Guides/GUIDES_HOME.md)
 
+[Fall 2020 - Addendum Design Document](Addendum_Design_Document/ADD_DESIGN_DOCUMENT.md)
+
 [Spring 2020 - Design Document](Design_Document/DESIGN_DOCUMENT.md)
 
 [Legacy Documentation](LegacyDocs/LEGACY_DOCS.md)
