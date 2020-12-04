@@ -16,9 +16,9 @@ The PegasOS Shell on release contains 24 commands, as given here including the a
 
 ***changedir***
 
-    changedir <path>
+`changedir <path>`
 
-        Will change the current directory to the specified parameter given.
+Will change the current directory to the specified parameter given.
 
 
 ***clear***
