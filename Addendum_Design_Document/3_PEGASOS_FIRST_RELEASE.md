@@ -14,13 +14,17 @@ PegasOS comes with a Command Line Interface, which we will call the Shell from h
 The PegasOS Shell on release contains 24 commands, as given here including the appropriate arguments for each one:
 
 
-changedir
-changedir <path>
+***changedir***
+
+    changedir <path>
+
         Will change the current directory to the specified parameter given.
 
 
-clear
-clear
+***clear***
+
+    clear
+
         Clears the screen of all previous input/output.
 
 
