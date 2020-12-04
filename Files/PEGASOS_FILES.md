@@ -4,7 +4,7 @@ For your convenience, some quick links to the available files are included below
 
 **Navigation**
 
-[PegasOS Addendum Design Document (Fall 2020) PLACEHOLDER]()
+[PegasOS Addendum Design Document (Fall 2020)](Fall2020_PegasOS_Design_Document.pdf)
 
 [PegasOS Final Design Document (Spring 2020)](PegasOS_FinalDesignDoc_Spring2020.pdf)
 
