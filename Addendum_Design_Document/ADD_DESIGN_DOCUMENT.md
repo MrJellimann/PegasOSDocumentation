@@ -10,8 +10,6 @@ For your convenience, the final design document has been converted into text pag
 
 ## PegasOS
 
-![PegasOS](images/image3.png)
-
 [0.1.1 Preface, 0.1.2 Overview](0_PREFACE_OVERVIEW.md)
 
 [1.0.0 Circle x PegasOS](1_CIRCLE_X_PEGASOS.md)
@@ -23,6 +21,8 @@ For your convenience, the final design document has been converted into text pag
 [4.0.0 PegasOS Future](4_PEGASOS_FUTURE.md)
 
 [5.0.0 PegasOS Team](5_PEGASOS_TEAM.md)
+
+![PegasOS](images/image3.png)
 
 
 [Back - Documentation Home](../README.md) | [Next - Introduction](0_PREFACE_OVERVIEW.md)
