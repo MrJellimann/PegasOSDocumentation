@@ -4,7 +4,7 @@ As was alluded to in the Overview, the adoption of Circle for the PegasOS projec
 
 ## 1.1.0 Circle
 
-“Circle is a C++ bare metal programming environment for the Raspberry Pi. It should be usable on all existing models (tested on model A+, B, B+, on Raspberry Pi 2, 3, 4 and on Raspberry Pi Zero). It provides several ready-tested C++ classes and add-on libraries, which can be used to control different hardware features of the Raspberry Pi. Together with Circle there are delivered several sample programs, which demonstrate the use of its classes. Circle can be used to create 32-bit or 64-bit bare metal applications.” - Rene Stange, Circle GitHub
+    “Circle is a C++ bare metal programming environment for the Raspberry Pi. It should be usable on all existing models (tested on model A+, B, B+, on Raspberry Pi 2, 3, 4 and on Raspberry Pi Zero). It provides several ready-tested C++ classes and add-on libraries, which can be used to control different hardware features of the Raspberry Pi. Together with Circle there are delivered several sample programs, which demonstrate the use of its classes. Circle can be used to create 32-bit or 64-bit bare metal applications.” - Rene Stange, Circle GitHub
 
 
 Most of the discussion about Circle will revolve around Release 42 (aka Step 42) which is the release of Circle that PegasOS is being developed with. Since the adoption of Circle by PegasOS, Circle has moved on to Release 43.1.
@@ -71,23 +71,23 @@ Circle provided the groundwork for us to be able to work on the system at large,
 PegasOS only takes a few things of importance from Circle, apart from the drivers needed to run the hardware on the system. These are the major components, as small functions and other pieces of code or structure are taken from classes, components, or paradigms from within Circle.
 
 
-The first of these is the kernel structure. Using the structure of the sample kernels that Circle has given us, we have based our kernel design around the main functionality that Circle expects from its kernels, and have extended the capabilities and functionality of the kernel from there.
+The first of these is the *kernel structure*. Using the structure of the sample kernels that Circle has given us, we have based our kernel design around the main functionality that Circle expects from its kernels, and have extended the capabilities and functionality of the kernel from there.
 
 
-The second being the Circle Scheduler. Circle’s scheduler on its own is rather basic - it operates on a simple queue that switches tasks every few seconds to the next one. We have taken this scheduler as the base and extended it with weights to allow certain tasks to have priority over others. Current tasks can also be viewed via command line.
+The second being the *Circle Scheduler*. Circle’s scheduler on its own is rather basic - it operates on a simple queue that switches tasks every few seconds to the next one. We have taken this scheduler as the base and extended it with weights to allow certain tasks to have priority over others. Current tasks can also be viewed via command line.
 
 
-The third being Circle’s Memory Management Unit. Circle’s MMU is quite bare-bones on its own - its purpose within Circle is quite literally to appease the ARM CPU at the heart of the Pi, and from there Circle effectively uses a one-to-one memory mapping onto the actual memory space. PegasOS’s modifications allow for this MMU to use actual virtualization on this memory, so that multiple programs can run on the system and have access to their own space in memory - much like any other modern OS.
+The third being Circle’s *Memory Management Unit*. Circle’s MMU is quite bare-bones on its own - its purpose within Circle is quite literally to appease the ARM CPU at the heart of the Pi, and from there Circle effectively uses a one-to-one memory mapping onto the actual memory space. PegasOS’s modifications allow for this MMU to use actual virtualization on this memory, so that multiple programs can run on the system and have access to their own space in memory - much like any other modern OS.
 
 
-The fourth being Circle’s implementation of FAT32. Circle includes an implementation of FAT32 that works on the SD card that Circle is on, and allows for real-time access of files as one would expect from FAT32. PegasOS leaves the implementation of Circle’s FAT32 basically unchanged, however the user is able to interact with FAT32 through the shell or CLI.
+The fourth being Circle’s implementation of *FAT32*. Circle includes an implementation of FAT32 that works on the SD card that Circle is on, and allows for real-time access of files as one would expect from FAT32. PegasOS leaves the implementation of Circle’s FAT32 basically unchanged, however the user is able to interact with FAT32 through the shell or CLI.
 
 
 The fifth, and perhaps one of the most important was the USB keyboard driver. Without that, it would be very hard to use anything on the system, for obvious reasons! As such we’ve allowed the USB keyboard drivers to act exactly how they would expect to within Circle’s environment, taking care not to edit the driver code itself nor modify any internal settings to the driver (that cannot obviously be reverted or damage the system’s integrity at run time).
 
 ## 1.2.2 PegasOS Original Components
 
-The major component that was built from scratch was PegasOS’s shell, or its Command Line Interface (CLI). This allows the user to interact with the system through a number of built-in commands, of which are discussed in Section 3.1.0 of this document. This is also the primary method in which the user is able to interact with data on the system through the file system, FAT32.
+The major component that was built from scratch was PegasOS’s shell, or its Command Line Interface (CLI). This allows the user to interact with the system through a number of built-in commands, of which are discussed in [Section 3.1.0](3_PEGASOS_FIRST_RELEASE.md) of this document. This is also the primary method in which the user is able to interact with data on the system through the file system, FAT32.
 
 
 PegasOS’s shell connects with Circle through a number of internal classes and functions from within the kernel and its dependencies to ensure that writing to the screen is done as intended, and that there is minimal delay between writing and reading input from the user’s keyboard. PegasOS also makes occasional use of Circle’s logger for some shell commands.

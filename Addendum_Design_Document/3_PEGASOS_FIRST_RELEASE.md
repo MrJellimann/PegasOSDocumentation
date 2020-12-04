@@ -1,6 +1,6 @@
 # 3.0.0 PegasOS First Release
 
-The first public release of PegasOS will be released at the end of the Fall 2020 Semester, which means that the first public release of PegasOS will be available on Wednesday, December 2nd, 2020. The link to this release is here. The original PegasOS Team may or may not continue work on PegasOS past this point, though this is not guaranteed. This point will be discussed further in PegasOS Future.
+The first public release of PegasOS will be released at the end of the Fall 2020 Semester, which means that the first public release of PegasOS will be available on Wednesday, December 2nd, 2020. The link to this release is [here](https://github.com/MrJellimann/PegasOS/releases/tag/v1.0.0). The original PegasOS Team may or may not continue work on PegasOS past this point, though this is not guaranteed. This point will be discussed further in *PegasOS Future*.
 
 
 We will break down the features of this release into four main components: the Command Line Interface or Shell, the File System, the Task System, and the Memory Management System.
@@ -215,40 +215,49 @@ Once the user has entered their username and password correctly, or created thei
 PegasOS uses a FAT32 system, as provided in Circle. While FAT32 is basic by today’s standards, it is not lacking in any of the typical features one would expect from a modern file system. PegasOS’s file system supports the following features:
 
 
-Create Files
+***Create Files***
+
 The user can create files of any type, the type being the file extension. A user may even create a file without an extension. The files can then be opened and written to or read from.
 
 
-Create Directories
+***Create Directories***
+
 The user may create directories wherever they wish, as long as the device has enough storage.
 
 
-Move Files
+***Move Files***
+
 The user may move files between directories, wherever they wish (with the appropriate permissions).
 
 
-Move Directories
+***Move Directories***
+
 The user can move a directory from one location on the disk to another (i.e. move a subdirectory from one directory to another).
 
 
-Open Files
-        The user can open files for reading or writing purposes.
+***Open Files***
+
+The user can open files for reading or writing purposes.
 
 
-Navigate Directories
+***Navigate Directories***
+
 The user may change the active or working directory, so that new commands are begun from the new active or working directory.
 
 
-Delete Files
-        The user can delete files (with the appropriate permissions).
+***Delete Files***
+
+The user can delete files (with the appropriate permissions).
 
 
-Delete Directories
-        The user can delete directories (with the appropriate permissions).
+***Delete Directories***
+
+The user can delete directories (with the appropriate permissions).
 
 
-Mount Storage Devices*
-        The user can mount different/additional storage devices.
+***Mount Storage Devices* ***
+
+The user can mount different/additional storage devices.
 
 
 *This is technically true, though this is primarily the SD card that the system is contained on.
@@ -261,7 +270,7 @@ The task system for PegasOS is fairly straightforward. There is a main task with
 CTask is the parent class to all tasks in the system. It allows for quite a bit of customization, as you can create tasks with different arguments (LED tasks, screen tasks, etc.). Any task created from CTask gets fed into an array in the scheduler, which gets processed through any function the scheduler may need. Each task also has an initial weight of zero, which is the lowest priority. Tasks that have higher weights will get inserted farther ahead in the array. Currently there is no ceiling limit to the weight of a task.
 
 
-As of now tasks cannot be removed via the command line, as this proved to be catastrophic to the system (though this could be addressed by another team in the future). However you can view all running tasks in the system and display them in real time. The task demo command displaytasks also showcases four screen tasks running on the system to demonstrate its multi-tasking abilities.
+As of now tasks cannot be removed via the command line, as this proved to be catastrophic to the system (though this could be addressed by another team in the future). However you can view all running tasks in the system and display them in real time. The task demo command *displaytasks* also showcases four screen tasks running on the system to demonstrate its multi-tasking abilities.
 
 
 Creating new tasks on the system is as simple as creating a class that is a child of CTask, and instantiating it. This could then be tied to commands on the shell for specific system tasks and/or components.
@@ -292,8 +301,8 @@ Will be a valid command and write ‘Some text for my file.’ to ‘myfile.txt�
 Will be an invalid command, not because it should have three parameters, but because ‘.. otherparam’ is the second parameter and is not a valid directory to move ‘myfile.txt’ into.
         
 * The command can be overflowed and leave the system unresponsive. The typical layout of the input string is as follows:
-<command> <param1> <param2>
-However, if the <command> section of the input string, i.e. if everything before the first space exceeds the buffer for the command string, the system will freeze and require a reboot.
+`<command> <param1> <param2>`
+However, if the `<command>` section of the input string, i.e. if everything before the first space exceeds the buffer for the command string, the system will freeze and require a reboot.
 
 
 * Overflowing the string parameter of the ‘writeto’ command can overwrite parts of the file extension for a new file creation, and the string written to the file will not be the entirety of what was entered. Furthermore, the end of the inputted string will have writeto appended to it.

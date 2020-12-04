@@ -4,7 +4,8 @@ Apart from wrapping up final administrative content, we’d like to use this sec
 
 
 As the project lead and sponsor, I can say that it’s been a real pleasure working with all of you on the PegasOS team. This certainly wasn’t an easy project, and even more so was this not an easy year! I’m sure that none of us will be able to forget 2020, and I know that for me at least, the time spent on this project with you all - through all the meetings and restarting and the endless amounts of documentation that we’ve been writing - I’ve enjoyed all of it and you all have been great to work with. I wish you the best in your future endeavors, and I hope that this project gave you valuable experience that you can take with you wherever you go. And I hope I wasn’t too bad of a project lead, hehe. Thanks again you guys, you’re awesome.
-* Christopher Walen
+
+- Christopher Walen
 
 ## 5.1.0 Administrative Content
 
@@ -26,13 +27,13 @@ The total budget for PegasOS did not change from last semester, which has been i
 | Total            |       |          | $241        |
 
 
-PegasOS still uses the GNU General Public License version 3 and later. To save space on this document, this license has been included in its entirety in the Spring 2020 Design Document in the Appendices section. A link to this license is also included here.
+PegasOS still uses the GNU General Public License version 3 and later. To save space on this document, this license has been included in its entirety in the Spring 2020 Design Document in the Appendices section. A link to this license is also included [here](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 
-As the project has become half-development and half-research, we have made an effort to make as much documentation available and that it is easily navigated on our documentation GitHub, which is linked here. The source code for the OS is included here. The release of the project that coincides with this version of the documentation and is the submission of the project for Fall 2020 is here.
+As the project has become half-development and half-research, we have made an effort to make as much documentation available and that it is easily navigated on our documentation GitHub, which is linked [here](https://github.com/MrJellimann/PegasOSDocumentation). The source code for the OS is included [here](https://github.com/MrJellimann/PegasOS). The release of the project that coincides with this version of the documentation and is the submission of the project for Fall 2020 is [here](https://github.com/MrJellimann/PegasOS/releases/tag/v1.0.0).
 
 
-The documentation includes all original designs, plans, and research from the Spring semester, summer, and Fall semester. As it should be plain to see, these original designs do not reflect the entirety of the system in its current state, which is part of the reason why this is a separate document (as we discussed in Sections 0.1.1 and 0.1.2).
+The documentation includes all original designs, plans, and research from the Spring semester, summer, and Fall semester. As it should be plain to see, these original designs do not reflect the entirety of the system in its current state, which is part of the reason why this is a separate document (as we discussed in Sections [0.1.1 and 0.1.2](0_PREFACE_OVERVIEW.md)).
 
 ## 5.2.0 Closing Remarks
 
@@ -144,7 +145,7 @@ As I’ve gotten further into my degree at UCF, I’ve gravitated more and more 
 
 
 ***What did you think of PegasOS? As a project? The final result?***
-It’s been a bumpy road, that’s for sure! Though ambitious projects like this always seem to have bumpy roads, so what’s new? But I think PegasOS was a great opportunity for us to do something that was really different from what everyone else in the class was doing, and I think that we’ve come a long way and achieved a lot of what we set out to do. Sure it's sad that we couldn’t do everything that we had originally planned, but it's honestly amazing that we even have this much to show for it. OS development is hard, and I think it's safe to say we all learned that the hard way!
+It’s been a bumpy road, that’s for sure! Though ambitious projects like this always seem to have bumpy roads, so what’s new? But I think PegasOS was a great opportunity for us to do something that was really different from what everyone else in the class was doing, and I think that we’ve come a long way and achieved a lot of what we set out to do. Sure it's sad that we couldn’t do *everything* that we had originally planned, but it's honestly amazing that we even have this much to show for it. OS development is hard, and I think it's safe to say we all learned that the hard way!
 
 
 But PegasOS has been a great experience, for me at least, and I’m glad I got to meet these great people that all brought their A game to this project. Dealing with other classes on top of this wasn’t easy, but we pushed through and it's all been worth it in the end. I’m very happy with the state of the project, and I’m really hopeful that Senior Design or Operating System students after us can take this project and really make it their own. I’m glad I got up and pitched it that day back in January.
@@ -153,7 +154,7 @@ But PegasOS has been a great experience, for me at least, and I’m glad I got t
 ***What’s next for you?***
 At the moment I’m not so sure; right now I’m looking for entry-level embedded system and system engineering jobs. I’m not the pickiest person in the world, so I’m not sure where I’ll end up quite yet. I’m applying for some positions at Lockheed Martin currently, so we’ll see how that goes! When I’m not working you’d probably find me either playing games or developing my own games - its a goal of mine to get a game I’ve made onto Steam some day! It could also be cool to work as a game developer, though that market is super competitive and I like the freedom of making whatever you want as an indie dev.
 
-[image]()
+![PegasOS - Thank you!](images/image2.png)
 
 # Thank you!
 

@@ -14,7 +14,7 @@ The cut features are any requirements and/or stretch goals mentioned in the orig
 
 ## 2.1.1 PegasOS Miscellaneous Programs
 
-Pretty much every single miscellaneous program was cut from the project. These were all of the ideas under Christopher’s Ideas, Kenny’s Ideas, Jacqueline’s Ideas, and Giancarlo’s Ideas. If a program was saved and made its way into the shell or otherwise into the first release of PegasOS, it will appear in the PegasOS First Release section.
+Pretty much every single miscellaneous program was cut from the project. These were all of the ideas under *Christopher’s Ideas*, *Kenny’s Ideas*, *Jacqueline’s Ideas*, *Jacob's Ideas* and *Giancarlo’s Ideas*. If a program was saved and made its way into the shell or otherwise into the first release of PegasOS, it will appear in the *PegasOS First Release* section.
 
 ## 2.1.2 PegasOS System Configuration
 
@@ -29,7 +29,7 @@ However, there is still a way to get custom programs to execute on the system. T
 1. Place the program’s header file in the /include/pegasos directory of the project.
 2. Place the program’s source code file in the /lib/pegasos directory, and add its name followed by the extension .o to the Makefile in that directory. Like so:
 
-[image]()  
+![PegasOS .cpp Makefile example](images/image1.png)  
 
 3. Create a command to execute the program within the PegasOS shell, inside of shell.cpp in /lib/pegasos
 4. Compile PegasOS and run on your device.
@@ -47,11 +47,11 @@ Edited features are any requirements and/or stretch goals and/or components of P
 While PegasOS still contains a scheduler, it is not reflective of the original design pattern, namely in its algorithm. A multi-level feedback queue was not feasible in the time frame after the Circle rebase occurred, and as such we began with a much simpler, straightforward scheduler. We increased its scheduling complexity as time allowed through adding task weights and insertion into the task queue by those weights, but we were not able to achieve the complexity and flexibility of the original design.
 
 
-Related to the scheduler, we were also not able to have custom binaries executable from within PegasOS. We are fairly certain that this would require extensive reworking of the system due to the reliance on the CTask class for executing tasks through the scheduler. It is possible however, to include custom programs as a part of PegasOS and compile them with the system and the kernel. For more information on this process, refer to the guide on the Documentation repository here.
+Related to the scheduler, we were also not able to have custom binaries executable from within PegasOS. We are fairly certain that this would require extensive reworking of the system due to the reliance on the CTask class for executing tasks through the scheduler. It is possible however, to include custom programs as a part of PegasOS and compile them with the system and the kernel. For more information on this process, refer to the guide on the Documentation repository [here](https://github.com/MrJellimann/PegasOSDocumentation/blob/master/Guides/G_CUSTOMPROGRAM.md).
 
 ## 2.2.2 PegasOS Memory
 
-While PegasOS still contains a memory system and through Circle we do have paging support, the pages are not ‘traditionally OS-like’ nor does it provide any sort of real virtualization of memory. This is elaborated on more in Section 4.2.5, and provides suggestions for future groups that tackle the problem.
+While PegasOS still contains a memory system and through Circle we do have paging support, the pages are not ‘traditionally OS-like’ nor does it provide any sort of real virtualization of memory. This is elaborated on more in [Section 4.2.5](4_PEGASOS_FUTURE.md), and provides suggestions for future groups that tackle the problem.
 
 [Back - 1.0.0 Circle x PegasOS](0_PREFACE_OVERVIEW.md) | [Next - 3.0.0 PegasOS First Release](3_PEGASOS_FIRST_RELEASE.md) | 
 [Design Document Home](ADD_DESIGN_DOCUMENT.md) | [Documentation Home](../README.md)
