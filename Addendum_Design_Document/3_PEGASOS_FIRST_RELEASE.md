@@ -23,121 +23,160 @@ Will change the current directory to the specified parameter given.
 
 ***clear***
 
-    clear
+`clear`
 
-        Clears the screen of all previous input/output.
-
-
-copy
-copy <file> <directory>
-        Creates an identical copy of the specified file to the specified location given.
+Clears the screen of all previous input/output.
 
 
-createdir
-createdir <directoryname>
-        Creates a subdirectory within the current directory.
+***copy***
+
+`copy <file> <directory>`
+
+Creates an identical copy of the specified file to the specified location given.
 
 
-createfile
-createfile <filename>
-        Creates a file with the given name and extension in the current directory.
+***createdir***
+
+`createdir <directoryname>`
+
+Creates a subdirectory within the current directory.
 
 
-currenttasks
-cutrenttasks
-        Shows a list of all currently active tasks in the scheduler.
+***createfile***
+
+`createfile <filename>`
+
+Creates a file with the given name and extension in the current directory.
 
 
-delete
-delete <file>
-        Deletes the specified file given.
+***currenttasks***
+
+`cutrenttasks`
+
+Shows a list of all currently active tasks in the scheduler.
 
 
-deletedir
-deletedir <directory>
-        Deletes the specified subdirectory given.
+***delete***
+
+`delete <file>`
+
+Deletes the specified file given.
 
 
-displaytasks
-displaytasks
-        Displays the scheduler demo. To stop displaying tasks enter ‘s’ and return.
+***deletedir***
+
+`deletedir <directory>`
+
+Deletes the specified subdirectory given.
 
 
-dirtext
-dirtext <num1,num2,num3>
+***displaytasks***
+
+`displaytasks`
+
+Displays the scheduler demo. To stop displaying tasks enter ‘s’ and return.
+
+
+***dirtext***
+
+`dirtext <num1,num2,num3>`
+
 Will change the directory color to the specified (x,y,z) values between 0-31 for Red, Green, and Blue respectively. E.g. dirtext 9,13,24
 
 
-echo
-echo <text>
-        Repeats the inputted text, surrounding it with “Echo” and “Echo!”
+***echo***
+
+`echo <text>`
+
+Repeats the inputted text, surrounding it with “Echo” and “Echo!”
 
 
-head
-head <file>
-head <file> <n>
+***head***
+
+`head <file>`
+
+`head <file> <n>`
+
 Prints out the first ‘n’ given lines of the specified file within the current directory. If no value for ‘n’ is not given, then it will simply print out the first 5 lines.
 
 
-hello
-hello
-        The system responds to the user and says hello.
+***hello***
+
+`hello`
+
+The system responds to the user and says hello.
 
 
-help
-help
+***help***
+
+`help`
+
 Lists all available commands in the system. (With a more mature system this will not be feasible).
 
 
-listdir
-listdir 
-        Displays the path to the current and the current working directory.
+***listdir***
+
+`listdir`
+
+Displays the path to the current and the current working directory.
 
 
-login
-login
-Will allow the user to login off Boot. Also allows for new users to create a new file with their own password.
+***memorystats***
 
+`memorystats`
 
-memorystats
-memorystats
 Displays the amount of free space on the low, high, and combined heap and how many memory blocks the system has.
 
 
-move
-move <file> <directory>
-        Moves the specified file given to the directory specified.
+***move***
+
+`move <file> <directory>`
+
+Moves the specified file given to the directory specified.
 
 
-power
-power
-        Powers off the system. This will occur immediately after this command is entered.
+***power***
+
+`power`
+
+Powers off the system. This will occur immediately after this command is entered.
 
 
-reboot
-reboot
-        Reboots the system immediately after this command is entered.
+***reboot***
+
+`reboot`
+
+Reboots the system immediately after this command is entered.
 
 
-systeminfo
-systeminfo
-        Displays the information for the separate components of the Pi.
+***systeminfo***
+
+`systeminfo`
+
+Displays the information for the separate components of the Pi.
 
 
-tail
-tail <file>
-tail <file> <n>
+***tail***
+
+`tail <file>`
+
+`tail <file> <n>`
+
 Prints out the last ‘n’ given lines of the specified file within the current directory. If no value for ‘n’ is not given, then it will simply print out the last 5 lines.
 
 
-usertext
-usertext <num1,num2,num3>
+***usertext***
+
+`usertext <num1,num2,num3>`
+
 Will change the user color to the specified (x,y,z) values between 0-31 for Red, Green, and Blue respectively. E.g. usertext 12,22,30
 
 
-writeto
-writeto <file> <string>
-        Will add the given string to the end of the given file.
+***writeto***
+
+`writeto <file> <string>`
+
+Will add the given string to the end of the given file.
 
 ## 3.1.2 PegasOS Users
 
