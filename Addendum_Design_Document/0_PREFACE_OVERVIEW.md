@@ -1,3 +1,7 @@
+# PegasOS
+
+![PegasOS](images/image3.png)
+
 ## 0.1.1 Preface
 
 The purpose of separating the design document into two separate documents is two-fold: one is to preserve the nature of the original design document and its intentions for PegasOS, and two is to contain and manage the changes that have been made in design and development since the creation of the original design document.

@@ -22,7 +22,5 @@ For your convenience, the final design document has been converted into text pag
 
 [5.0.0 PegasOS Team](5_PEGASOS_TEAM.md)
 
-![PegasOS](images/image3.png)
-
 
 [Back - Documentation Home](../README.md) | [Next - Introduction](0_PREFACE_OVERVIEW.md)
