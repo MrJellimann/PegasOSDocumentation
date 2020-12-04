@@ -4,7 +4,8 @@ As was alluded to in the Overview, the adoption of Circle for the PegasOS projec
 
 ## 1.1.0 Circle
 
-    “Circle is a C++ bare metal programming environment for the Raspberry Pi. It should be usable on all existing models (tested on model A+, B, B+, on Raspberry Pi 2, 3, 4 and on Raspberry Pi Zero). It provides several ready-tested C++ classes and add-on libraries, which can be used to control different hardware features of the Raspberry Pi. Together with Circle there are delivered several sample programs, which demonstrate the use of its classes. Circle can be used to create 32-bit or 64-bit bare metal applications.” - Rene Stange, Circle GitHub
+> “Circle is a C++ bare metal programming environment for the Raspberry Pi. It should be usable on all existing models (tested on model A+, B, B+, on Raspberry Pi 2, 3, 4 and on Raspberry Pi Zero). It provides several ready-tested C++ classes and add-on libraries, which can be used to control different hardware features of the Raspberry Pi. Together with Circle there are delivered several sample programs, which demonstrate the use of its classes. Circle can be used to create 32-bit or 64-bit bare metal applications.”
+> - Rene Stange, Circle GitHub
 
 
 Most of the discussion about Circle will revolve around Release 42 (aka Step 42) which is the release of Circle that PegasOS is being developed with. Since the adoption of Circle by PegasOS, Circle has moved on to Release 43.1.
