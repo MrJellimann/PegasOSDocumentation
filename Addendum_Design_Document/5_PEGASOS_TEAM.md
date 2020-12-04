@@ -128,6 +128,7 @@ I don’t have much planned out honestly. I know I’m a little on that, but hey
 ## 5.2.5 Christopher Walen
 
 ***Thank You’s***
+
 I’d like to thank the team again, without you guys this project wouldn’t have happened in the first place. It’s been such a great learning experience, and it's been a lot of fun getting to work with you guys and make this a reality.
 
 
@@ -135,6 +136,7 @@ I’d also like to thank my girlfriend, Hope. She’s helped me stay sane throug
 
 
 ***Who Am I?***
+
 I’m Chris, I’m graduating this December with a Bachelor’s degree in Computer Science. It’s been a wild and crazy ride getting here, but it’s all been a formative and greatly enlightening experience for me.
 
 
@@ -145,6 +147,7 @@ As I’ve gotten further into my degree at UCF, I’ve gravitated more and more 
 
 
 ***What did you think of PegasOS? As a project? The final result?***
+
 It’s been a bumpy road, that’s for sure! Though ambitious projects like this always seem to have bumpy roads, so what’s new? But I think PegasOS was a great opportunity for us to do something that was really different from what everyone else in the class was doing, and I think that we’ve come a long way and achieved a lot of what we set out to do. Sure it's sad that we couldn’t do *everything* that we had originally planned, but it's honestly amazing that we even have this much to show for it. OS development is hard, and I think it's safe to say we all learned that the hard way!
 
 
@@ -152,6 +155,7 @@ But PegasOS has been a great experience, for me at least, and I’m glad I got t
 
 
 ***What’s next for you?***
+
 At the moment I’m not so sure; right now I’m looking for entry-level embedded system and system engineering jobs. I’m not the pickiest person in the world, so I’m not sure where I’ll end up quite yet. I’m applying for some positions at Lockheed Martin currently, so we’ll see how that goes! When I’m not working you’d probably find me either playing games or developing my own games - its a goal of mine to get a game I’ve made onto Steam some day! It could also be cool to work as a game developer, though that market is super competitive and I like the freedom of making whatever you want as an indie dev.
 
 ![PegasOS - Thank you!](images/image2.png)
